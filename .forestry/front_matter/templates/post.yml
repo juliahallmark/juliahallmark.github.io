@@ -1,0 +1,27 @@
+---
+label: Post
+hide_body: false
+fields:
+- name: layout
+  label: layout
+  type: text
+  default: post
+  hidden: true
+- name: title
+  label: title
+  type: text
+- name: date
+  label: post date
+  type: datetime
+  default: Now
+- name: categories
+  label: categories
+  type: tag_list
+  default: []
+- name: tags
+  label: tags
+  type: tag_list
+  default: []
+- name: featured_image
+  label: featured image
+  type: file

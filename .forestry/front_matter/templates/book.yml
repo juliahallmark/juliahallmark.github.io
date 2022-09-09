@@ -1,0 +1,37 @@
+---
+label: Book
+hide_body: false
+fields:
+- name: layout
+  label: layout
+  type: text
+  default: book
+  hidden: true
+- name: type
+  label: type
+  type: select
+  config:
+    source:
+      type: custom
+    options:
+        - children
+        - young adult
+- name: cover
+  label: cover
+  description: An image of the book's cover
+  type: file
+- name: amazon_url
+  label: amazon url
+  description: A link to where the book can be purchased
+  type: text
+- name: published
+  label: publish date
+  type: datetime
+  config:
+    date_format: MM/DD/YYYY
+    time_format: ""
+    display_utc: false
+    export_format: YYYY-MM-DDT00:00:00Z
+- name: length
+  label: Number of Pages
+  type: number

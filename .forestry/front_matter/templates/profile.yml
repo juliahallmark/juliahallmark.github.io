@@ -1,0 +1,16 @@
+---
+label: Profile
+hide_body: false
+fields:
+- name: name
+  label: name
+  type: text
+- name: photo
+  label: profile picture
+  type: file
+- name: email
+  label: email address
+  type: text
+- name: amazon_link
+  label: amazon link
+  type: text

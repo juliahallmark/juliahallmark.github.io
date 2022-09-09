@@ -2,6 +2,7 @@
 layout: default
 title: Home
 ---
+{% assign profile = site.pages | where: 'name', 'about.md' | first %}
 <section class="hero is-link is-fullheight-with-navbar">
   <div class="container">
     <div class="hero-body">
@@ -12,7 +13,7 @@ title: Home
               Welcome!
             </h1>
             <article class="content is-medium">
-              {{ site.data.profile.bio | markdownify }}
+              {{ profile.content | markdownify }}
             </article>
           </section>
           <section class="mt-4">
@@ -31,7 +32,7 @@ title: Home
         </div>
         <aside class="column is-one-third">
           <figure class="image">
-            <img src="{{ site.data.profile.photo | absolute_url }}" class="is-rounded" alt="{{ site.data.profile.name }}">
+            <img src="{{ profile.photo | absolute_url }}" class="is-rounded" alt="{{ profile.name }}">
           </figure>
           <section class="mt-4">
             <h2 class="is-size-4">Recent Posts</h2>

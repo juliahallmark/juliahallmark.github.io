@@ -10,7 +10,7 @@
   <meta property="og:title" content="{{ page.title }}">
   <meta property="og:description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="{{ page.url }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
   <meta property="og:image" content="{% if page.featuredImage %}{{ page.featuredImage | absolute_url }}{% else %}{{ site.logo | absolute_url }}{% endif %}">
 
   <link rel="apple-touch-icon" href="{{ site.logo | absolute_url }}">

@@ -22,7 +22,7 @@ title: Home
             {% for book in site.books %}
               <figure class="column is-half-mobile is-one-third-tablet">
                 <a href="{{ book.url }}">
-                  <img src="{{ book.cover | absolute_url }}" alt="{{ book.title}} cover" />
+                  <img src="{{ book.cover | absolute_url }}" alt="{{ book.title }} cover" />
                   <figcaption>{{ book.title }}</figcaption>
                 </a>
               </figure>
@@ -45,7 +45,7 @@ title: Home
               </article>
             {% endfor %}
             {% if site.posts.size < 3 %}
-            <a href="{{ '/posts' | absolute_url }}" class="link mt-4 is-underlined">
+            <a href="{% link blog.html %}" class="link mt-4 is-underlined">
               See More
             </a>
             {% endif %}

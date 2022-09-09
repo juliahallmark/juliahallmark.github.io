@@ -29,52 +29,10 @@
       </li>
 
       <li class="level-item has-text-centered">
-        <a href="{{ '/posts' | absolute_url }}" class="button is-rounded is-link">
+        <a href="{% link blog.html %}" class="button is-rounded is-link">
           Blog
         </a>
       </li>
     </ul>
-    <!-- <div class="navbar-brand">
-      <a class="navbar-item" href="{{ site.url }}">
-        {% if site.logo %}
-        <img src="{{ site.logo }}" style="max-height:80px;" alt="{{ site.title }}">
-        {% else %}
-        <strong class="is-size-2">{{ site.title }}</strong>
-        {% endif %}
-      </a>
-
-      <a role="button" class="navbar-burger" aria-label="menu" onclick="document.getElementById('mainNav').classList.toggle('is-active');">
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-        <span aria-hidden="true"></span>
-      </a>
-    </div>
-
-    <div id="mainNav" class="navbar-menu">
-      <div class="navbar-start">
-        <a class="navbar-item">
-          About
-        </a>
-
-        <div class="navbar-item has-dropdown is-hoverable">
-          <a class="navbar-link">
-            Books
-          </a>
-
-          <div class="navbar-dropdown">
-            <a class="navbar-item">
-              Children
-            </a>
-            <a class="navbar-item">
-              Young Adult
-            </a>
-          </div>
-        </div>
-
-        <a class="navbar-item">
-          Blog
-        </a>
-      </div>
-    </div> -->
   </nav>
 </header>

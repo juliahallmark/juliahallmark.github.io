@@ -7,7 +7,7 @@ layout: default
   {% assign books = site.books | where: "type", page.type %}
   {% for book in books %}
     <li>
-      {% if book.cover %}<img src="{{ book.cover }}" alt="{{ book.title}} cover" />{% endif %}
+      {% if book.cover %}<img src="{{ book.cover }}" alt="{{ book.title }} cover" />{% endif %}
       <h2><a href="{{ book.url }}">{{ book.title }}</a></h2>
       <h3>{{ book.published | date_to_string: "ordinal", "US" }}</h3>
       <p>{{ book.content | markdownify }}</p>

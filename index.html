@@ -6,36 +6,48 @@ title: Home
 <section class="hero is-link is-fullheight-with-navbar">
   <div class="container">
     <div class="hero-body">
-      <div class="columns">
-        <aside class="column is-one-third">
+      <div class="columns is-multiline">
+        <div class="column is-one-quarter">
           <figure class="image">
             <img src="{{ profile.photo | absolute_url }}" class="is-rounded" alt="{{ profile.name }}">
           </figure>
+        </div>
+        <div class="column is-three-quarters">
           <section>
-            <h1 class="title is-size-1 outlined-title">
+            <h2 class="sr-only">Published Works</h2>
+            <div class="columns is-multiline is-mobile">
+            {% assign allbooks = site.books | concat: site.books | concat: site.books | concat: site.books %}
+            {% comment %}
+            {% assign allbooks = site.books %}
+            {% endcomment %}
+            {% for book in allbooks %}
+              <figure class="column is-half-mobile is-one-third-tablet has-text-centered is-circled">
+                <div class="circle-container" role="display" style="transform: rotate({% cycle '-4deg', '42deg', '26deg', '13deg', '63deg' %});">
+                  {% capture circle_color %}{% cycle '#f14668', '#00d1b2', '#ffe08a', '#9fa5db' %}{% endcapture %}
+                  {% include circle.svg color=circle_color %}
+                </div>
+                <a href="{{ book.url }}">
+                  <figcaption class="outlined-title is-size-4 mb-2">{{ book.title }}</figcaption>
+                  <img src="{{ book.cover | absolute_url }}" alt="{{ book.title }} cover" />
+                </a>
+              </figure>
+            {% endfor %}
+            </div>
+          </section>
+        </div>
+        <div class="column is-two-thirds">
+          <section>
+            <h1 class="title is-size-1 outlined-title is-font-bubblegum_sans">
               {{ site.homepage_greeting }}
             </h1>
             <article class="content is-medium">
               {{ profile.content | markdownify }}
             </article>
           </section>
-        </aside>
-        <div class="column is-two-thirds">
-          <section>
-            <h2 class="sr-only">All Books</h2>
-            <div class="columns is-multiline is-mobile">
-            {% for book in site.books %}
-              <figure class="column is-half-mobile is-one-third-tablet has-text-centered">
-                <a href="{{ book.url }}">
-                  <img src="{{ book.cover | absolute_url }}" alt="{{ book.title }} cover" />
-                  <figcaption class="outlined-title is-size-5">{{ book.title }}</figcaption>
-                </a>
-              </figure>
-            {% endfor %}
-            </div>
-          </section>
+        </div>
+        <div class="column is-one-third">
           <section class="mt-4">
-            <h2 class="is-size-4">Recent Posts</h2>
+            <h2 class="title is-size-4 outlined-title is-font-bubblegum_sans">Recent Posts</h2>
             {% for post in site.posts limit: 3 %}
               <article class="my-2">
                 <a href="{{ post.url }}">

@@ -1,35 +1,37 @@
 <header class="section py-2">
   <nav class="container" role="navigation" aria-label="main navigation">
-    <ul class="level">
-      <li class="level-left">
-        {% if site.logo %}
-        <a href="{{ site.url }}" class="level-item" title="Home">
-          <img src="{{ site.logo | absolute_url }}" style="max-height:80px;" alt="{{ site.title }} logo" />
-        </a>
-        {% endif %}
-        <div class="level-item is-block has-text-centered-mobile" style="max-width: 350px; margin: auto">
-          <p class="has-text-weight-bold is-size-4">
-            <a href="{{ site.url }}" class="has-text-black" title="Home">
-              {{ site.title }}
-            </a>
-          </p>
-          <p class="is-italic is-size-6 mb-4" style="line-height: 1rem;">{{ site.description }}</p>
+    <ul class="columns is-vcentered" style="min-height:{{ site.max_logo_height }}px;">
+      <li class="column is-half">
+        <div class="columns is-vcentered has-text-centered-mobile">
+          {% if site.logo %}
+          <a href="{{ site.url }}" class="column is-narrow" title="Home">
+            <img src="{{ site.logo | absolute_url }}" style="max-height:{{ site.max_logo_height }}px;" alt="{{ site.title }} logo" />
+          </a>
+          {% endif %}
+          <div class="column is-block">
+            <p class="site-title has-text-weight-bold is-size-4" style="line-height: 1.5rem;">
+              <a href="{{ site.url }}" class="has-text-black" title="Home">
+                {{ site.title }}
+              </a>
+            </p>
+            <p class="is-italic is-size-6 mb-4" style="line-height: 1rem;">{{ site.description }}</p>
+          </div>
         </div>
       </li>
 
-      <li class="level-item has-text-centered">
-        <a href="{% link children.html %}" class="button is-rounded is-danger">
+      <li class="column mb-4 has-text-centered main-menu-item is-danger is-flex is-justify-content-center is-align-items-center">
+        <a href="{% link children.html %}" class="outlined-title is-size-5">
           Children's Books
         </a>
       </li>
-      <li class="level-item has-text-centered">
-        <a href="{% link young-adult.html %}" class="button is-rounded is-info">
+      <li class="column mb-4 has-text-centered main-menu-item is-info is-flex is-justify-content-center is-align-items-center">
+        <a href="{% link young-adult.html %}" class="outlined-title is-size-5">
           Young Adult Books
         </a>
       </li>
 
-      <li class="level-item has-text-centered">
-        <a href="{% link blog.html %}" class="button is-rounded is-link">
+      <li class="column mb-4 has-text-centered main-menu-item is-link is-flex is-justify-content-center is-align-items-center">
+        <a href="{% link blog.html %}" class="outlined-title is-size-5">
           Blog
         </a>
       </li>

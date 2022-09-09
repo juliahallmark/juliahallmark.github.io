@@ -1,0 +1,79 @@
+---
+---
+
+@import url({% link /assets/bulma.min.css %});
+
+@font-face {
+  font-family: 'dancingscript';
+  src: url('{% link /assets/fonts/dancingscript.woff2 %}') format('woff2'),
+       url('{% link /assets/fonts/dancingscript.woff %}') format('woff'),
+       url('{% link /assets/fonts/dancingscript.ttf %}') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bubblegum_sans';
+  src: url('{% link /assets/fonts/bubblegum_sans.woff2 %}') format('woff2'),
+       url('{% link /assets/fonts/bubblegum_sans.woff %}') format('woff'),
+       url('{% link /assets/fonts/bubblegum_sans.ttf %}') format('ttf'),
+       url('{% link /assets/fonts/bubblegum_sans.otf %}') format('otf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.site-title {
+  font-family: 'dancingscript';
+}
+
+.main-menu-item {
+  position: relative;
+  height: 72px;
+}
+.main-menu-item a {
+  z-index: 1;
+}
+.main-menu-item:before {
+  content: ' ';
+  position: absolute;
+  display: block;
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  z-index: -1;
+}
+.main-menu-item.is-danger:before {
+  background-color: #f14668;
+}
+.main-menu-item.is-info:before {
+  background-color: #3e8ed0;
+}
+.main-menu-item.is-link:before {
+  background-color: #485fc7;
+}
+
+.outlined-title {
+  font-family: 'bubblegum_sans';
+  color: #fff;
+  -webkit-text-stroke: 1px #000;
+  text-shadow: 3px 3px 0 #000,
+             -1px -1px 0 #000,
+              1px -1px 0 #000,
+              -1px 1px 0 #000,
+               1px 1px 0 #000;
+}
+a.outlined-title:is(:hover, :focus, :active) {
+  color: #ffe08a;
+}
+
+.sr-only {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
+}

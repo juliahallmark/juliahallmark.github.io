@@ -1,8 +1,10 @@
 title: Julia Hallmark Christian Fiction
 description: Where faith is explored in stories told, and anything is possible!
 logo: "images/logo.png"
+max_logo_height: 80
 # baseurl: "" # the subpath of your site, e.g. /blog
 url: https://juliahallmark.com # the base hostname & protocol for your site, e.g. http://example.com
+homepage_greeting: Welcome!
 
 # Build settings
 plugins:

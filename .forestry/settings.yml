@@ -19,11 +19,9 @@ sections:
 - type: document
   path: about.md
   label: Profile
-  match: "**/*"
 - type: document
   path: _config.yml
   label: Site Configuration
-  match: "**/*"
 upload_dir: 'images/:year:/:month:'
 public_path: "/images"
 front_matter_path: ''

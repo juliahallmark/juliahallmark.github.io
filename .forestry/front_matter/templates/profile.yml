@@ -14,3 +14,5 @@ fields:
 - name: amazon_link
   label: amazon link
   type: text
+pages:
+- about.md

@@ -1,0 +1,80 @@
+<header class="section py-2">
+  <nav class="container" role="navigation" aria-label="main navigation">
+    <ul class="level">
+      <li class="level-left">
+        {% if site.logo %}
+        <a href="{{ site.url }}" class="level-item" title="Home">
+          <img src="{{ site.logo | absolute_url }}" style="max-height:80px;" alt="{{ site.title }} logo" />
+        </a>
+        {% endif %}
+        <div class="level-item is-block has-text-centered-mobile" style="max-width: 350px; margin: auto">
+          <p class="has-text-weight-bold is-size-4">
+            <a href="{{ site.url }}" class="has-text-black" title="Home">
+              {{ site.title }}
+            </a>
+          </p>
+          <p class="is-italic is-size-6 mb-4" style="line-height: 1rem;">{{ site.description }}</p>
+        </div>
+      </li>
+
+      <li class="level-item has-text-centered">
+        <a href="{% link children.html %}" class="button is-rounded is-danger">
+          Children's Books
+        </a>
+      </li>
+      <li class="level-item has-text-centered">
+        <a href="{% link young-adult.html %}" class="button is-rounded is-info">
+          Young Adult Books
+        </a>
+      </li>
+
+      <li class="level-item has-text-centered">
+        <a href="{{ '/posts' | absolute_url }}" class="button is-rounded is-link">
+          Blog
+        </a>
+      </li>
+    </ul>
+    <!-- <div class="navbar-brand">
+      <a class="navbar-item" href="{{ site.url }}">
+        {% if site.logo %}
+        <img src="{{ site.logo }}" style="max-height:80px;" alt="{{ site.title }}">
+        {% else %}
+        <strong class="is-size-2">{{ site.title }}</strong>
+        {% endif %}
+      </a>
+
+      <a role="button" class="navbar-burger" aria-label="menu" onclick="document.getElementById('mainNav').classList.toggle('is-active');">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="mainNav" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item">
+          About
+        </a>
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Books
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+              Children
+            </a>
+            <a class="navbar-item">
+              Young Adult
+            </a>
+          </div>
+        </div>
+
+        <a class="navbar-item">
+          Blog
+        </a>
+      </div>
+    </div> -->
+  </nav>
+</header>

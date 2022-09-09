@@ -34,3 +34,5 @@ fields:
   label: homepage greeting
   description: The salutation that appears on the home page
   default: Welcome!
+pages:
+- _config.yml

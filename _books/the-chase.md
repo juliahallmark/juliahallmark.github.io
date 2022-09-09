@@ -2,8 +2,8 @@
 layout: default
 title: The Chase
 type: children
-cover: /images/the-chase-cover.jpg
-amazon_url: https://www.amazon.com/gp/product/B0B399YR99/
+cover: "/images/the-chase-cover.jpg"
+amazon_url: "https://www.amazon.com/gp/product/B0B399YR99/"
 published: 2022-06-03T00:00:00Z
 length: 26
 ---

@@ -25,3 +25,5 @@ fields:
 - name: featured_image
   label: featured image
   type: file
+pages:
+- _posts/this-is-a-test-blog-post.md

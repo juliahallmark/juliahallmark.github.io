@@ -16,10 +16,7 @@ title: Home
           <section>
             <h2 class="sr-only">Published Works</h2>
             <div class="columns is-multiline is-mobile">
-            {% assign allbooks = site.books | concat: site.books | concat: site.books | concat: site.books %}
-            {% comment %}
             {% assign allbooks = site.books %}
-            {% endcomment %}
             {% for book in allbooks %}
               <figure class="column is-half-mobile is-one-third-tablet has-text-centered is-circled">
                 <div class="circle-container" role="display" style="transform: rotate({% cycle '-4deg', '42deg', '26deg', '13deg', '63deg' %});">

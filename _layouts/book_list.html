@@ -22,29 +22,36 @@ layout: default
               {% assign books = site.books | where: "type", page.type %}
               {% for book in books %}
               <div class="column is-half">
-                <a href="{{ book.url }}" class="card">
-                  <div class="card-image">
-                    <figure class="image">
-                      <img src="{{ book.cover | absolute_url }}" alt="{{ book.title }} cover" />
-                    </figure>
-                  </div>
-                  <div class="card-content has-text-centered">
-                    <p class="title">
-                      {{ book.title }}
-                    </p>
-                    {% if book.published %}
-                    <p class="subtitle">
-                      Published {{ book.published | date_to_string: "ordinal", "US" }}
-                    </p>
-                    {% endif %}
-                    {% if book.blurb %}
-                    <div class="content">
-                      <p>{{ book.blurb }}</p>
+                <a href="{{ book.url }}">
+                  <article class="card" style="color:white;background-color:#ffffff33;">
+                    <div class="card-image">
+                      <figure class="image">
+                        <img src="{{ book.cover | absolute_url }}" alt="{{ book.title }} cover" />
+                      </figure>
                     </div>
-                    {% endif %}
-                  </div>
+                    <div class="card-content has-text-centered">
+                      <p class="title">
+                        {{ book.title }}
+                      </p>
+                      {% if book.published %}
+                      <p class="subtitle">
+                        Published {{ book.published | date_to_string: "ordinal", "US" }}
+                      </p>
+                      {% endif %}
+                      {% if book.blurb %}
+                      <div class="content">
+                        <p>{{ book.blurb }}</p>
+                      </div>
+                      {% endif %}
+                    </div>
+                  </article>
                 </a>
-            {% endfor %}
+              </div>
+              {% else %}
+              <div class="column is-full">
+                <p class="is-size-4">Check back later when I've published some {{ page.title | downcase }} books!</p>
+              </div>
+              {% endfor %}
             </div>
           </section>
         </div>

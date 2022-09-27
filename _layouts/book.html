@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<section class="hero is-link is-fullheight-with-navbar">
+  <div class="container">
+    <div class="hero-body">
+      <div class="columns">
+        <div class="column is-one-third">
+          <figure class="image mb-2">
+            <img src="{{ page.cover | absolute_url }}" alt="{{ page.title }} cover" />
+          </figure>
+          {% if page.length %}
+          <p class="mb-2">{{ page.length }} pages long</p>
+          {% endif %}
+          {% if page.age_range %}
+          <p class="mb-2">Intended for age {{ page.age_range }} and up</p>
+          {% endif %}
+          {% if page.amazon_url %}
+          <p class="mb-2">
+            <a href="{{ page.amazon_url}}" class="button {% if page.type == 'children' %}is-danger{% else %}is-info{% endif %}">Buy Now!</a>
+          </p>
+          {% endif %}
+        </div>
+        <div class="column is-two-thirds">
+          <section>
+            <h1 class="title is-size-1 outlined-title is-font-bubblegum_sans">
+              {{ page.title }}
+            </h1>
+            {% if page.published %}
+            <p class="subtitle">
+              Published {{ page.published | date_to_string: "ordinal", "US" }}
+            </p>
+            {% endif %}
+            <div class="content">
+              <p>{{ page.content }}</p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,5 +1,5 @@
 ---
-name: Julia Hallmark
+my_name: Julia Hallmark
 photo: "/images/julia-hallmark.jpg"
 email: authorjuliahallmark@gmail.com
 amazon_link: https://www.amazon.com/Julia-Hallmark/e/B0B4KRSRJG

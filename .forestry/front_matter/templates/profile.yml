@@ -2,8 +2,8 @@
 label: Profile
 hide_body: false
 fields:
-- name: name
-  label: name
+- name: my_name
+  label: my name
   type: text
 - name: photo
   label: profile picture

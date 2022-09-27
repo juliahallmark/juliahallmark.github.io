@@ -5,10 +5,13 @@ logo: images/logo.png
 max_logo_height: 80
 url: https://juliahallmark.com
 homepage_greeting: Welcome!
+sass:
+  sass_dir: _sass
 plugins:
 - jekyll-feed
 collections:
   books:
     output: true
+    style: compressed
 exclude:
 - src

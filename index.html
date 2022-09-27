@@ -23,11 +23,11 @@ title: Home
             {% for book in allbooks %}
               <figure class="column is-half-mobile is-one-third-tablet has-text-centered is-circled">
                 <div class="circle-container" role="display" style="transform: rotate({% cycle '-4deg', '42deg', '26deg', '13deg', '63deg' %});">
-                  {% capture circle_color %}{% cycle '#f14668', '#00d1b2', '#ffe08a', '#9fa5db' %}{% endcapture %}
+                  {% capture circle_color %}{% cycle '#f14668', '#00d1b2', '#fcef35', '#4308b9' %}{% endcapture %}
                   {% include circle.svg color=circle_color %}
                 </div>
                 <a href="{{ book.url }}">
-                  <figcaption class="outlined-title is-size-4 mb-2">{{ book.title }}</figcaption>
+                  <figcaption class="outlined-title is-size-4 has-text-weight-bold mb-2">{{ book.title }}</figcaption>
                   <img src="{{ book.cover | absolute_url }}" alt="{{ book.title }} cover" />
                 </a>
               </figure>

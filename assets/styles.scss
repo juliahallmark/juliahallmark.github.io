@@ -1,7 +1,18 @@
 ---
 ---
 
-@import url({% link /assets/bulma.min.css %});
+@charset "utf-8";
+$yellow: hsl(30, 100%, 66%);
+/*! bulma.io v0.9.4 | MIT License | github.com/jgthms/bulma */
+@import "bulma-0.9.4/utilities/_all";
+@import "bulma-0.9.4/base/_all";
+@import "bulma-0.9.4/elements/_all";
+@import "bulma-0.9.4/form/_all";
+@import "bulma-0.9.4/components/_all";
+@import "bulma-0.9.4/grid/_all";
+@import "bulma-0.9.4/helpers/_all";
+@import "bulma-0.9.4/layout/_all";
+
 
 @font-face {
   font-family: 'dancingscript';
@@ -70,16 +81,16 @@
   z-index: -1;
 }
 .main-menu-item.is-danger:before {
-  background-color: #f14668;
+  background-color: $danger;
 }
 .main-menu-item.is-info:before {
-  background-color: #3e8ed0;
+  background-color: $info;
 }
 .main-menu-item.is-link:before {
-  background-color: #485fc7;
+  background-color: $link;
 }
 .main-menu-item.is-warning:before {
-  background-color: #ffe08a;
+  background-color: $warning;
 }
 
 .outlined-title {

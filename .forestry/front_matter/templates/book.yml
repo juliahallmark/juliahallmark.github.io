@@ -35,3 +35,11 @@ fields:
 - name: length
   label: Number of Pages
   type: number
+- name: age_range
+  label: age range
+  description: "For ages x and up"
+  type: number
+- name: blurb
+  label: blurb
+  description: A short sentence about the book
+  type: textarea

@@ -1,16 +1,54 @@
 ---
 layout: default
 ---
-<h1>{{ page.title }}</h1>
-
-<ul>
-  {% assign books = site.books | where: "type", page.type %}
-  {% for book in books %}
-    <li>
-      {% if book.cover %}<img src="{{ book.cover }}" alt="{{ book.title }} cover" />{% endif %}
-      <h2><a href="{{ book.url }}">{{ book.title }}</a></h2>
-      <h3>{{ book.published | date_to_string: "ordinal", "US" }}</h3>
-      <p>{{ book.content | markdownify }}</p>
-    </li>
-  {% endfor %}
-</ul>
+<section class="hero is-link is-fullheight-with-navbar">
+  <div class="container">
+    <div class="hero-body">
+      <div class="columns">
+        <div class="column is-one-quarter">
+          <section>
+            <h1 class="title is-size-1 outlined-title is-font-bubblegum_sans">
+              {{ page.title }}
+            </h1>
+            <article class="content is-medium">
+              {{ page.content | markdownify }}
+            </article>
+          </section>
+        </div>
+        <div class="column is-three-quarters">
+          <section>
+            <h2 class="sr-only">Published Works</h2>
+            <div class="columns is-multiline is-mobile">
+              {% assign books = site.books | where: "type", page.type %}
+              {% for book in books %}
+              <div class="column is-half">
+                <a href="{{ book.url }}" class="card">
+                  <div class="card-image">
+                    <figure class="image">
+                      <img src="{{ book.cover | absolute_url }}" alt="{{ book.title }} cover" />
+                    </figure>
+                  </div>
+                  <div class="card-content has-text-centered">
+                    <p class="title">
+                      {{ book.title }}
+                    </p>
+                    {% if book.published %}
+                    <p class="subtitle">
+                      Published {{ book.published | date_to_string: "ordinal", "US" }}
+                    </p>
+                    {% endif %}
+                    {% if book.blurb %}
+                    <div class="content">
+                      <p>{{ book.blurb }}</p>
+                    </div>
+                    {% endif %}
+                  </div>
+                </a>
+            {% endfor %}
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

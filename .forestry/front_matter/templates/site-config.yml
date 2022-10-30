@@ -34,5 +34,22 @@ fields:
   label: homepage greeting
   description: The salutation that appears on the home page
   default: Welcome!
+- name: paginate
+  type: number
+  label: blog posts per page
+  default: 10
+- name: newsletter
+  type: text
+  label: newsletter sign up url
+  default: ''
+- name: advanced_footer_html
+  type: textarea
+  label: advanced footer code
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: html
+  default: ''
 pages:
 - _config.yml

@@ -5,6 +5,8 @@ logo: images/logo.png
 max_logo_height: 80
 url: https://juliahallmark.com
 homepage_greeting: Welcome!
+newsletter: ''
+advanced_footer_html: ''
 sass:
   sass_dir: _sass
 plugins:

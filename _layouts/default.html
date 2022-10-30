@@ -25,5 +25,8 @@
 {{ content }}
 </main>
 {% include footer.html %}
+{% if site.advanced_footer_html %}
+{{ site.advanced_footer_html }}
+{% endif %}
 </body>
 </html>

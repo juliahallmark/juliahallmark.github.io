@@ -17,6 +17,12 @@ sections:
   templates:
   - book
 - type: document
+  path: children.md
+  label: Children's Page
+- type: document
+  path: young-adult.md
+  label: Young Adult Page
+- type: document
   path: about.md
   label: Profile
 - type: document

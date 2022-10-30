@@ -30,7 +30,7 @@ layout: default
           </div>
         </header>
         <article class="section content">
-          {% if page.featured_image %}
+          {% if page.featured_image.size > 0 %}
           <figure class="image">
             <img src="{{ page.featured_image }}" />
           </figure>

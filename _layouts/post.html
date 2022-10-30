@@ -1,0 +1,42 @@
+---
+layout: default
+---
+<section class="hero is-link is-fullheight-with-navbar">
+  <div class="container">
+    <div class="hero-body">
+      <section>
+        <header>
+          <h1 class="title is-size-1 outlined-title is-font-bubblegum_sans">
+            {{ page.title }}
+          </h1>
+          <div class="subtitle">
+            {% if page.date %}
+            <p>
+              Posted {{ page.date | date_to_string: "ordinal", "US" }}
+              {% if page.categories.size > 0 %}
+              in {{ page.categories | join }}
+              {% endif %}
+            </p>
+            {% endif %}
+            {% if page.tags.size > 0 %}
+            <div class="tags">
+              <!-- At some point, a tags page would probably be good -->
+              {% for tag in page.tags %}
+              <span class="tag is-warning has-text-black">{{ tag }}</span>
+              {% endfor %}
+            </div>
+            {% endif %}
+          </div>
+        </header>
+        <article class="section content">
+          {% if page.featured_image %}
+          <figure class="image">
+            <img src="{{ page.featured_image }}" />
+          </figure>
+          {% endif %}
+          {{ page.content | markdownify }}
+        </article>
+      </section>
+    </div>
+  </div>
+</section>

@@ -22,9 +22,8 @@ layout: default
             {% endif %}
             {% if page.tags.size > 0 %}
             <div class="tags">
-              <!-- At some point, a tags page would probably be good -->
               {% for tag in page.tags %}
-              <span class="tag is-warning has-text-black">{{ tag }}</span>
+              <a href="{% link blog/tagged.html %}?tag={{tag}}" class="tag is-warning has-text-black">{{ tag }}</a>
               {% endfor %}
             </div>
             {% endif %}

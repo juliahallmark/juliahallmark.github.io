@@ -1,0 +1,55 @@
+---
+layout: default
+title: Tagged
+---
+<section class="hero is-link is-fullheight-with-navbar">
+  <div class="container">
+    <div class="hero-body">
+      <section>
+        <header>
+          <h1 class="title is-size-1 outlined-title is-font-bubblegum_sans">
+            {{ page.title }}: <span id="targetTag"></span>
+          </h1>
+        </header>
+        <div id="taggedPosts"></div>
+      </section>
+    </div>
+  </div>
+</section>
+<script>
+var allPosts = {{ site.posts | jsonify }}
+var tag = false;
+if (window.location.search.indexOf('tag=') >= 0) {
+  tag = window.location.search.substring(window.location.search.indexOf('tag=') + 'tag='.length);
+}
+if (!tag) window.location = '{% link blog/index.html %}';
+
+document.getElementById('targetTag').innerText = tag;
+var taggedPosts = [];
+for (var i = 0; i < allPosts.length; i++) {
+  var post = allPosts[i];
+  if (post.tags.indexOf(tag) >= 0) {
+    taggedPosts.push(post);
+  }
+}
+
+var taggedPostsEl = document.getElementById('taggedPosts');
+if (taggedPosts.length > 0) {
+  var html = '';
+  for (var i = 0; i < taggedPosts.length; i++) {
+    var post = taggedPosts[i];
+    html += '<article class="box" style="color:white;background-color:#ffffff33;">'
+      + '<h2 class="title">'
+        + '<a href="' + post.url + '">' + post.title + '</a>'
+      + '</h2>'
+      + '<div class="subtitle">'
+        + (post.date ? '<p>Posted ' + post.date + '</p>' : '')
+      + '</div>'
+      + (post.excerpt ? '<div class="content"><p>' + post.excerpt + ' <a href="' + post.url + '">...Read More</a></p></div>' : '')
+    + '</article>'
+  }
+  taggedPostsEl.innerHTML = html;
+} else {
+  taggedPostsEl.innerHTML = 'No posts found with tag <span class="tag is-warning has-text-black">' + tag + '</span>';
+}
+</script>

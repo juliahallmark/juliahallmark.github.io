@@ -11,8 +11,20 @@ fields:
 - name: email
   label: email address
   type: text
-- name: amazon_link
-  label: amazon link
-  type: text
+- name: find_me_on
+  type: field_group
+  label: external link details
+  description: Details for the "Find me on ..." link in the website footer
+  fields: 
+  - name: name
+    type: text
+    label: name
+    description: Fills in the blank "Find me on _____"
+    default: Amazon.com
+  - name: url
+    type: text
+    label: url
+    description: Where the button links to
+    default: ''
 pages:
 - about.md

@@ -6,10 +6,15 @@
         <p>&copy; 2022 {{ profile.my_name }}</p>
       </div>
     </div>
+    <div class="level-item">
+      <a class="button is-large is-warning outlined-title is-font-bubblegum_sans" href="{% if site.newsletter.size > 0 %}{{ site.newsletter }}{% else %}{% link blog/index.html %}{% endif %}" target="_blank">Get updates</a>
+    </div>
     <div class="level-right">
+      {% if profile.find_me_on.url.size > 0 %}
       <div class="level-item">
-        <a href="{{ profile.amazon_link }}" target="_blank">Find me on Amazon.com</a>
+        <a class="button is-normal is-danger" href="{{ profile.find_me_on.url }}" target="_blank">Find me on {{ profile.find_me_on.name }}</a>
       </div>
+      {% endif %}
     </div>
   </div>
 </footer>

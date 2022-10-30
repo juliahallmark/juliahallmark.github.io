@@ -13,9 +13,11 @@ layout: default
             {% if page.date %}
             <p>
               Posted {{ page.date | date_to_string: "ordinal", "US" }}
+              {% comment %}
               {% if page.categories.size > 0 %}
               in {{ page.categories | join }}
               {% endif %}
+              {% endcomment %}
             </p>
             {% endif %}
             {% if page.tags.size > 0 %}

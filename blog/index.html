@@ -20,9 +20,11 @@ title: Blog
             {% if post.date %}
             <p>
               Posted {{ post.date | date_to_string: "ordinal", "US" }}
+              {% comment %}
               {% if post.categories.size > 0 %}
               in {{ post.categories | join }}
               {% endif %}
+              {% endcomment %}
             </p>
             {% endif %}
             {% if post.tags.size > 0 %}

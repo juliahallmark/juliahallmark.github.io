@@ -14,10 +14,10 @@ fields:
   label: post date
   type: datetime
   default: Now
-- name: categories
-  label: categories
-  type: tag_list
-  default: []
+# - name: categories
+#   label: categories
+#   type: tag_list
+#   default: []
 - name: tags
   label: tags
   type: tag_list

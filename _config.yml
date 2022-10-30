@@ -7,6 +7,8 @@ url: https://juliahallmark.com
 homepage_greeting: Welcome!
 newsletter: ''
 advanced_footer_html: ''
+timezone: America/Los_Angeles
+permalink: /blog/:year-:month-:day_:title:output_ext
 sass:
   sass_dir: _sass
 plugins:

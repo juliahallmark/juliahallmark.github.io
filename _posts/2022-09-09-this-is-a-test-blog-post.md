@@ -1,8 +1,8 @@
 ---
 layout: post
 date: 2022-09-09 13:49:14 -0700
-categories: []
-tags: []
+categories: ['test']
+tags: ['test','post']
 title: This is a test blog post!
 featured_image: "/images/2022/09/old-logo.png"
 

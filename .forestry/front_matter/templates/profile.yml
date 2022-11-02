@@ -15,7 +15,7 @@ fields:
   type: field_group
   label: external link details
   description: Details for the "Find me on ..." link in the website footer
-  fields: 
+  fields:
   - name: name
     type: text
     label: name

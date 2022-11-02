@@ -37,7 +37,7 @@ fields:
   type: number
 - name: age_range
   label: age range
-  description: "For ages x and up"
+  description: For ages x and up
   type: number
 - name: blurb
   label: blurb

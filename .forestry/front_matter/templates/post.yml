@@ -14,10 +14,6 @@ fields:
   label: post date
   type: datetime
   default: Now
-# - name: categories
-#   label: categories
-#   type: tag_list
-#   default: []
 - name: tags
   label: tags
   type: tag_list
@@ -25,5 +21,3 @@ fields:
 - name: featured_image
   label: featured image
   type: file
-pages:
-- _posts/this-is-a-test-blog-post.md

@@ -43,3 +43,5 @@ fields:
   label: blurb
   description: A short sentence about the book
   type: textarea
+pages:
+- _books/Once Upon A Mountain.md

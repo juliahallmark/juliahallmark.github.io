@@ -10,7 +10,3 @@ blurb: A colorful, rhyming, read-out-loud delight
 
 ---
 The Chase is a colorful, rhyming, read-out-loud delight. The spunky dog siblings confront a mean cat who teases them every day. When opportunity opens the doggy's apartment door, a hilarious scramble for justice begins. This is a book for ages four and up. It models responsible confrontation, patience in hard situations and preparing for unexpected opportunities. This book is also about the consequences of teasing. Children will want to visit the spunky characters, enjoy the dynamic illustrations, and listen to the warm and funny rhyming text over and over again.
-
-![](/images/2022/11/100_0955.jpg)
-
-This is some more text about this book!

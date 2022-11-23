@@ -33,6 +33,14 @@ $yellow: hsl(30, 100%, 66%);
   font-style: normal;
 }
 
+html {
+  // remove default background color so color effects can display
+  background-color: transparent;
+}
+body {
+  background-color: $scheme-main-bis;
+}
+
 .is-font-dancingscript {
   font-family: 'dancingscript';
 }

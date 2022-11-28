@@ -31,9 +31,10 @@ fields:
     description: Fills in the blank "Buy at _____"
     config:
       source:
-        type: pages
-        section: vendors
-        file: _data/vendors.yaml
+        type: documents
+        section: site-configuration
+        file: _config.yml
+        path: vendors
   - name: url
     type: text
     label: url

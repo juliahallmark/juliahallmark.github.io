@@ -5,13 +5,13 @@ type: children
 cover: "/images/the-chase-cover.jpg"
 amazon_url: ""
 links:
-  - name: Amazon.com
+  - vendor: Amazon
     url: https://www.amazon.com/gp/product/B0B399YR99/
     color: yellow
-  - name: Barnes & Noble
+  - vendor: BN
     url: https://www.barnesandnoble.com/w/the-chase-julia-hallmark/1141546327?ean=9781685700775
     color: green
-  - name: Apple Books
+  - vendor: Apple
     url: https://books.apple.com/us/book/the-chase/id6442942955
     color: red
 published: 2022-06-03T00:00:00Z

@@ -25,11 +25,15 @@ fields:
   label: Buy Links
   description: Links for purchasing this book
   fields: 
-  - name: name
-    type: text
-    label: name
+  - name: vendor
+    type: select
+    label: vendor
     description: Fills in the blank "Buy at _____"
-    default: Amazon.com
+    config:
+      source:
+        type: pages
+        section: vendors
+        file: _data/vendors.yaml
   - name: url
     type: text
     label: url
@@ -50,10 +54,6 @@ fields:
       - light gray
       - dark gray
       - black
-- name: amazon_url
-  label: amazon url
-  description: A link to where the book can be purchased
-  type: text
 - name: published
   label: publish date
   type: datetime

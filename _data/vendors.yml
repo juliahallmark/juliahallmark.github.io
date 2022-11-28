@@ -1,0 +1,18 @@
+---
+vendors:
+  Facebook:
+    name: Facebook
+    icon: "/images/icons/facebook-icon.png"
+  Amazon:
+    name: Amazon.com
+    icon: "/images/icons/amazon-icon.png"
+  BN:
+    name: Barnes & Noble
+    icon: "/images/icons/barnes-and-noble-icon.png"
+  Apple:
+    name: Apple Books
+    icon: "/images/icons/apple-books-icon.png"
+  CFP:
+    name: Christian Faith Publishing
+    icon: "/images/icons/CFP-logo.png"
+---

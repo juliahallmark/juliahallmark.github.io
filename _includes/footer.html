@@ -1,23 +1,23 @@
 {% assign profile = site.pages | where: 'name', 'about.md' | first %}
 <footer class="footer">
-  <div class="level">
-    <div class="level-left">
-      {% if profile.find_me_on.size > 0 %}
-      <div class="level-item">
-        <div>
-        <p class="is-block"><strong>Find me on</strong></p>
-        {% for site in profile.find_me_on %}
-        <a class="button is-normal is-danger" href="{{ site.url }}" target="_blank">{{ site.name }}</a>
-        {% endfor %}
+  <div class="container">
+    <div class="columns">
+      <div class="column is-half mb-2 has-text-centered">
+        {% if profile.find_me_on.size > 0 %}
+        <h2 class="is-size-6 has-text-weight-bold pb-3">Find me on</h2>
+        <div class="columns is-mobile is-multiline is-centered">
+          {% for site in profile.find_me_on %}
+          <div class="is-narrow m-1">
+            <a class="button is-normal is-danger px-2 py-1" href="{{ site.url }}" target="_blank">{{ site.name }}</a>
+          </div>
+          {% endfor %}
         </div>
+        {% endif %}
       </div>
-      {% endif %}
-    </div>
-    <div class="level-item">
-      <a class="button is-large is-warning outlined-title is-font-bubblegum_sans" href="{% if site.newsletter.size > 0 %}{{ site.newsletter }}{% else %}{% link blog/index.html %}{% endif %}" target="_blank">Get updates</a>
-    </div>
-    <div class="level-right">
-      <div class="level-item">
+      <div class="column mb-2 has-text-centered">
+        <a class="button is-large is-warning outlined-title is-font-bubblegum_sans" href="{% if site.newsletter.size > 0 %}{{ site.newsletter }}{% else %}{% link blog/index.html %}{% endif %}" target="_blank">Get updates</a>
+      </div>
+      <div class="column is-narrow">
         <p>&copy; 2022 {{ profile.my_name }}</p>
       </div>
     </div>

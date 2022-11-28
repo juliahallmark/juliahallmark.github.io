@@ -15,16 +15,17 @@ fields:
   type: field_group_list
   label: external link details
   description: Details for the "Find me on ..." links in the website footer
-  fields: 
+  fields:
   - name: vendor
     type: select
     label: vendor
     description: Fills in the blank "Find me on _____"
     config:
       source:
-        type: pages
-        section: vendors
-        file: _data/vendors.yaml
+        type: documents
+        section: site-configuration
+        file: _config.yml
+        path: vendors
   - name: url
     type: text
     label: url

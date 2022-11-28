@@ -24,7 +24,7 @@ fields:
   type: field_group_list
   label: Buy Links
   description: Links for purchasing this book
-  fields: 
+  fields:
   - name: vendor
     type: select
     label: vendor

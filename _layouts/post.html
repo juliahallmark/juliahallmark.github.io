@@ -32,7 +32,7 @@ layout: default
         <article class="section content">
           {% if page.featured_image.size > 0 %}
           <figure class="image">
-            <img src="{{ page.featured_image }}" />
+            <img src="{{ page.featured_image }}" style="max-height:400px;width:auto;" />
           </figure>
           {% endif %}
           {{ page.content | markdownify }}

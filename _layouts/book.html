@@ -17,7 +17,7 @@ layout: default
           {% endif %}
           {% if page.links.size > 0 %}
           {% for link in page.links %}
-          {% assign vendor = site.data.vendors.vendors[link.vendor] %}
+          {% assign vendor = site.vendors[link.vendor] %}
           <p class="mb-2">
             <a href="{{ link.url }}" class="button {% case link.color %}{% when 'red' %}is-danger{% when 'yellow' %}is-warning{% when 'green' %}is-success{% when 'blue' %}is-info{% when 'teal' %}is-primary{% when 'white' %}is-white{% when 'light gray' %}is-light{% when 'dark gray' %}is-dark{% when 'black' %}is-black{% endcase %}">
               Buy at {{ vendor.name }}

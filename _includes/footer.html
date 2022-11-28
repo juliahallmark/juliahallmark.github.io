@@ -7,7 +7,7 @@
         <h2 class="is-size-6 has-text-weight-bold pb-3">Find me on</h2>
         <div class="columns is-mobile is-multiline is-centered">
           {% for link in profile.find_me_on %}
-          {% assign vendor = site.data.vendors.vendors[link.vendor] %}
+          {% assign vendor = site.vendors[link.vendor] %}
           <div class="is-narrow m-1">
             <a class="button is-normal is-danger px-2 py-1" href="{{ link.url }}" target="_blank">{{ vendor.name }}</a>
           </div>

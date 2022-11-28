@@ -21,7 +21,7 @@ title: Home
             {% if profile.find_me_on.size > 0 %}
             <div class="is-hidden-mobile mt-1 columns is-mobile is-centered is-multiline">
               {% for link in profile.find_me_on %}
-              {% assign vendor = site.data.vendors.vendors[link.vendor] %}
+              {% assign vendor = site.vendors[link.vendor] %}
               <div class="column is-one-fifth">
                 <figure class="image is-32x32 mx-auto">
                   <a href="{{ link.url }}" title="{{ vendor.name }}" target="_blank">

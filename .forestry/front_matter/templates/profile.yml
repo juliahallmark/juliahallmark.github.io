@@ -12,9 +12,9 @@ fields:
   label: email address
   type: text
 - name: find_me_on
-  type: field_group
+  type: field_group_list
   label: external link details
-  description: Details for the "Find me on ..." link in the website footer
+  description: Details for the "Find me on ..." links in the website footer
   fields: 
   - name: name
     type: text
@@ -26,5 +26,9 @@ fields:
     label: url
     description: Where the button links to
     default: ''
+  - name: icon
+    label: icon
+    type: file
+    description: This should be a small square PNG image
 pages:
 - about.md

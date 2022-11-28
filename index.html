@@ -11,6 +11,19 @@ title: Home
           <figure class="image">
             <img src="{{ profile.photo | absolute_url }}" class="is-rounded" alt="{{ profile.my_name }}">
           </figure>
+          {% if profile.find_me_on.size > 0 %}
+          <div class="mt-1 columns is-mobile is-centered is-multiline">
+            {% for site in profile.find_me_on %}
+            <div class="column is-one-fifth">
+              <figure class="image is-32x32 mx-auto">
+                <a href="{{ site.url }}" title="{{ site.name }}" target="_blank">
+                  <img src="{{ site.icon | absolute_url }}" alt="{{ site.name }}" />
+                </a>
+              </figure>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
         </div>
         <div class="column is-three-quarters">
           <section>

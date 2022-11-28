@@ -2,19 +2,24 @@
 <footer class="footer">
   <div class="level">
     <div class="level-left">
+      {% if profile.find_me_on.size > 0 %}
       <div class="level-item">
-        <p>&copy; 2022 {{ profile.my_name }}</p>
+        <div>
+        <p class="is-block"><strong>Find me on</strong></p>
+        {% for site in profile.find_me_on %}
+        <a class="button is-normal is-danger" href="{{ site.url }}" target="_blank">{{ site.name }}</a>
+        {% endfor %}
+        </div>
       </div>
+      {% endif %}
     </div>
     <div class="level-item">
       <a class="button is-large is-warning outlined-title is-font-bubblegum_sans" href="{% if site.newsletter.size > 0 %}{{ site.newsletter }}{% else %}{% link blog/index.html %}{% endif %}" target="_blank">Get updates</a>
     </div>
     <div class="level-right">
-      {% if profile.find_me_on.url.size > 0 %}
       <div class="level-item">
-        <a class="button is-normal is-danger" href="{{ profile.find_me_on.url }}" target="_blank">Find me on {{ profile.find_me_on.name }}</a>
+        <p>&copy; 2022 {{ profile.my_name }}</p>
       </div>
-      {% endif %}
     </div>
   </div>
 </footer>

@@ -3,7 +3,17 @@ layout: book
 title: The Chase
 type: children
 cover: "/images/the-chase-cover.jpg"
-amazon_url: "https://www.amazon.com/gp/product/B0B399YR99/"
+amazon_url: ""
+links:
+  - name: Amazon.com
+    url: https://www.amazon.com/gp/product/B0B399YR99/
+    color: yellow
+  - name: Barnes & Noble
+    url: https://www.barnesandnoble.com/w/the-chase-julia-hallmark/1141546327?ean=9781685700775
+    color: green
+  - name: Apple Books
+    url: https://books.apple.com/us/book/the-chase/id6442942955
+    color: red
 published: 2022-06-03T00:00:00Z
 length: 26
 age_range: 4

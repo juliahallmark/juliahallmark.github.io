@@ -15,10 +15,14 @@ layout: default
           {% if page.age_range %}
           <p class="mb-2">Intended for age {{ page.age_range }} and up</p>
           {% endif %}
-          {% if page.amazon_url %}
+          {% if page.links.size > 0 %}
+          {% for link in page.links %}
           <p class="mb-2">
-            <a href="{{ page.amazon_url}}" class="button {% if page.type == 'children' %}is-danger{% else %}is-info{% endif %}">Buy Now!</a>
+            <a href="{{ link.url }}" class="button {% case link.color %}{% when 'red' %}is-danger{% when 'yellow' %}is-warning{% when 'green' %}is-success{% when 'blue' %}is-info{% when 'teal' %}is-primary{% when 'white' %}is-white{% when 'light gray' %}is-light{% when 'dark gray' %}is-dark{% when 'black' %}is-black{% endcase %}">
+              Buy at {{ link.name }}
+            </a>
           </p>
+          {% endfor %}
           {% endif %}
         </div>
         <div class="column is-two-thirds">

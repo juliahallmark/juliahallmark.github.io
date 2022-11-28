@@ -20,6 +20,36 @@ fields:
   label: cover
   description: An image of the book's cover
   type: file
+- name: buy_links
+  type: field_group_list
+  label: Buy Links
+  description: Links for purchasing this book
+  fields: 
+  - name: name
+    type: text
+    label: name
+    description: Fills in the blank "Buy at _____"
+    default: Amazon.com
+  - name: url
+    type: text
+    label: url
+    description: Where the button links to
+    default: ''
+  - name: color
+    label: button color
+    type: select
+    config:
+      source:
+        type: custom
+      options:
+      - red
+      - yellow
+      - blue
+      - teal
+      - white
+      - light gray
+      - dark gray
+      - black
 - name: amazon_url
   label: amazon url
   description: A link to where the book can be purchased

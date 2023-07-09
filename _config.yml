@@ -1,39 +1,49 @@
----
 title: Julia Hallmark Christian Fiction
-description: Where faith is explored in stories told, and anything is possible!
+description: 'Where faith is explored in stories told, and anything is possible!'
 logo: images/logo.png
 max_logo_height: 80
-url: https://juliahallmark.com
+url: 'https://juliahallmark.com'
 homepage_greeting: Welcome!
 newsletter: ''
 advanced_footer_html: ''
 timezone: America/Los_Angeles
-permalink: /blog/:year-:month-:day_:title:output_ext
+permalink: '/blog/:year-:month-:day_:title:output_ext'
 vendors:
   Facebook:
     name: Facebook
-    icon: "/images/icons/facebook-icon.png"
+    icon: /images/icons/facebook-icon.png
+    color: blue
   Amazon:
     name: Amazon.com
-    icon: "/images/icons/amazon-icon.png"
+    icon: /images/icons/amazon-icon.png
+    color: yellow
   BN:
     name: Barnes & Noble
-    icon: "/images/icons/barnes-and-noble-icon.png"
+    icon: /images/icons/barnes-and-noble-icon.png
+    color: green
   Apple:
     name: Apple Books
-    icon: "/images/icons/apple-books-icon.png"
+    icon: /images/icons/apple-books-icon.png
+    color: red
   CFP:
     name: Christian Faith Publishing
-    icon: "/images/icons/CFP-logo.png"
+    icon: /images/icons/CFP-logo.png
+    color: black
 sass:
   sass_dir: _sass
 plugins:
-- jekyll-paginate
+  - jekyll-paginate
 paginate: 10
-paginate_path: "/blog/page:num/"
+paginate_path: '/blog/page:num/'
 collections:
   books:
     output: true
     style: compressed
 exclude:
-- src
+  - src
+  - node_modules
+  - Gemfile
+  - Gemfile.lock
+  - tina
+  - .forestry
+_template: site_config

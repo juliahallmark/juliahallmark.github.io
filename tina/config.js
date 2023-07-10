@@ -4,6 +4,7 @@ import { bookList } from "./models/bookList";
 import { postFields } from "./templates";
 import { profileFields } from "./templates";
 import { site_configFields } from "./templates";
+import { about } from "./models/about";
 
 // Your hosting provider likely exposes this as an environment variable
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
@@ -37,108 +38,9 @@ export default defineConfig({
       //     ...bookFields(),
       //   ],
       // },
-      book,
+      about,
       bookList,
-      // {
-      //   format: "md",
-      //   label: "Children's Page",
-      //   name: "childrens_page",
-      //   path: "/",
-      //   ui: {
-      //     allowedActions: {
-      //       create: false,
-      //       delete: false,
-      //     },
-      //   },
-      //   match: {
-      //     include: "children",
-      //   },
-      //   fields: [
-      //     {
-      //       type: "rich-text",
-      //       name: "body",
-      //       label: "Body of Document",
-      //       description: "This is the markdown body",
-      //       isBody: true,
-      //     },
-      //   ],
-      // },
-      // {
-      //   format: "md",
-      //   label: "Young Adult Page",
-      //   name: "young_adult_page",
-      //   path: "/",
-      //   ui: {
-      //     allowedActions: {
-      //       create: false,
-      //       delete: false,
-      //     },
-      //   },
-      //   match: {
-      //     include: "young-adult",
-      //   },
-      //   fields: [
-      //     {
-      //       type: "rich-text",
-      //       name: "body",
-      //       label: "Body of Document",
-      //       description: "This is the markdown body",
-      //       isBody: true,
-      //     },
-      //   ],
-      // },
-      // {
-      //   format: "md",
-      //   label: "Profile",
-      //   name: "profile",
-      //   path: "/",
-      //   ui: {
-      //     allowedActions: {
-      //       create: false,
-      //       delete: false,
-      //     },
-      //   },
-      //   match: {
-      //     include: "about",
-      //   },
-      //   fields: [
-      //     {
-      //       type: "rich-text",
-      //       name: "body",
-      //       label: "Body of Document",
-      //       description: "This is the markdown body",
-      //       isBody: true,
-      //     },
-      //     {
-      //       type: "string",
-      //       name: "my_name",
-      //       label: "my name",
-      //     },
-      //     {
-      //       type: "image",
-      //       name: "photo",
-      //       label: "profile picture",
-      //     },
-      //     {
-      //       type: "string",
-      //       name: "email",
-      //       label: "email address",
-      //     },
-      //     {
-      //       type: "object",
-      //       name: "find_me_on",
-      //       label: "external link details",
-      //       list: true,
-      //       fields: [
-      //         {
-      //           type: "string",
-      //           name: "url",
-      //           label: "url",
-      //         },
-      //       ],
-      //     },
-      //   ],
-      // },
+      book,
       // {
       //   format: "yml",
       //   label: "Site Configuration",

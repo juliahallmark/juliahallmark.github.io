@@ -19,7 +19,8 @@
         <a class="button is-large is-warning outlined-title is-font-bubblegum_sans" href="{% if site.newsletter.size > 0 %}{{ site.newsletter }}{% else %}{% link blog/index.html %}{% endif %}" target="_blank">Get updates</a>
       </div>
       <div class="column is-narrow">
-        <p>&copy; 2022 {{ profile.my_name }}</p>
+        <p>&copy; <span id="copyrightYear">2023</span> {{ profile.my_name }}</p>
+        <script>(function() {document.getElementById('copyrightYear').innerHTML = (new Date()).getFullYear();})()</script>
       </div>
     </div>
   </div>

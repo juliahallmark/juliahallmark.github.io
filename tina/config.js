@@ -1,6 +1,6 @@
 import { defineConfig } from "tinacms";
 import { book } from "./models/book";
-import { bookFields } from "./templates";
+import { bookList } from "./models/bookList";
 import { postFields } from "./templates";
 import { profileFields } from "./templates";
 import { site_configFields } from "./templates";
@@ -38,6 +38,7 @@ export default defineConfig({
       //   ],
       // },
       book,
+      bookList,
       // {
       //   format: "md",
       //   label: "Children's Page",

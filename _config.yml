@@ -46,3 +46,4 @@ exclude:
   - Gemfile.lock
   - tina
   - .forestry
+  - .github

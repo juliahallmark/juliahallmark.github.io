@@ -1,6 +1,6 @@
 title: Julia Hallmark Christian Fiction
 description: 'Where faith is explored in stories told, and anything is possible!'
-logo: images/logo.png
+logo: /images/logo.png
 max_logo_height: 80
 url: 'https://juliahallmark.com'
 homepage_greeting: Welcome!
@@ -46,4 +46,3 @@ exclude:
   - Gemfile.lock
   - tina
   - .forestry
-_template: site_config

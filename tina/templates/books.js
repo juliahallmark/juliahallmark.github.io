@@ -1,4 +1,4 @@
-export const book = {
+export const books = {
   format: "md",
   label: "Books",
   name: "books",

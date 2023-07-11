@@ -1,4 +1,4 @@
-export const post = {
+export const posts = {
   format: "md",
   label: "Blog Posts",
   name: "posts",

@@ -7,8 +7,8 @@ import { siteConfig } from "./templates/siteConfig";
 
 export default defineConfig({
   branch: 'main',
-  clientId: process.env.TINA_PUBLIC_CLIENT_ID,
-  token: process.env.TINA_TOKEN,
+  clientId: '09d59101-3dac-45f8-b0ea-9b83fc07ce5a',
+  token: '375ffc4f69add1be82d71cdf1c62763c8d80e079',
   client: { skip: true },
   build: {
     outputFolder: "manage-site",

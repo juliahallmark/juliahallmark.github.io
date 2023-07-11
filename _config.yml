@@ -42,6 +42,7 @@ collections:
 exclude:
   - src
   - node_modules
+  - vendor
   - Gemfile
   - Gemfile.lock
   - tina

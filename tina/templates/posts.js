@@ -6,6 +6,30 @@ export const posts = {
   match: {
     include: "**/*",
   },
+  defaultItem: () => {
+    return {
+      layout: 'post',
+      title: 'New Post',
+      date: new Date().toISOString(),
+      tags: [],
+      featured_image: '',
+    }
+  },
+  ui: {
+    filename: {
+      readonly: true,
+      slugify: (values) => {
+        const postDate = new Date(values?.date ?? Date.now());
+        const dateFormat = postDate.toISOString().split('T')[0];
+        const title = values?.title?.toLowerCase()
+          .replace(/[^a-z0-9]/g, '-')
+          .replace(/-+/g, '-')
+          .replace(/^-|-$/g, '');
+        console.log(postDate, title);
+        return dateFormat + '-' + title;
+      },
+    },
+  },
   fields: [
     {
       type: "string",
@@ -28,15 +52,15 @@ export const posts = {
     {
       type: "rich-text",
       name: "body",
-      label: "Full Book Description",
-      description: "This is the text that appears on the book page",
+      label: "Post Text",
+      description: "This is the text of the post",
       isBody: true,
     },
     {
       type: "image",
-      name: "cover",
-      label: "Cover",
-      description: "An image of the book's cover",
+      name: "featured_image",
+      label: "Featured image",
+      description: "An image to display at the top of a post",
     },
     {
       type: "string",

@@ -7,7 +7,7 @@ homepage_greeting: Welcome!
 newsletter: ''
 advanced_footer_html: ''
 timezone: America/Los_Angeles
-permalink: '/blog/:year-:month-:day_:title:output_ext'
+permalink: '/blog/:year/:slug:output_ext'
 vendors:
   Facebook:
     name: Facebook

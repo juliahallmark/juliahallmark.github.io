@@ -23,9 +23,9 @@ export default defineConfig({
   schema: {
     collections: [
       posts,
-      about,
       bookLists,
       books,
+      about,
       siteConfig,
     ],
   },

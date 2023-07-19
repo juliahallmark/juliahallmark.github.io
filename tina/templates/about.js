@@ -1,6 +1,6 @@
 export const about = {
   format: "md",
-  label: "About Page",
+  label: "Author Profile",
   name: "about",
   path: "/",
   match: {

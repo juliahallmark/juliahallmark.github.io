@@ -25,7 +25,6 @@ export const posts = {
           .replace(/[^a-z0-9]/g, '-')
           .replace(/-+/g, '-')
           .replace(/^-|-$/g, '');
-        console.log(postDate, title);
         return dateFormat + '-' + title;
       },
     },

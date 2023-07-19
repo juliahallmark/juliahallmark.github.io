@@ -6,6 +6,22 @@ export const books = {
   match: {
     include: "**/*",
   },
+  defaultItem: () => {
+    return {
+      layout: 'book',
+    }
+  },
+  ui: {
+    filename: {
+      readonly: true,
+      slugify: (values) => {
+        return values?.title?.toLowerCase()
+          .replace(/[^a-z0-9]/g, '-')
+          .replace(/-+/g, '-')
+          .replace(/^-|-$/g, '');
+      },
+    },
+  },
   fields: [
     {
       type: "string",

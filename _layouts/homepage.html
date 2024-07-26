@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{{ site.description }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{{ site.logo | absolute_url }}">
+
+  <link rel="apple-touch-icon" href="{{ site.logo | absolute_url }}">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+  <!-- <link rel="stylesheet" href="{{ '/assets/styles.css' | absolute_url }}"> -->
+  <style>
+    .bg-image {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+    .door {
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
+    }
+    #hero-bg {
+      background: url(../images/homepage/milky-way-4416194_1920.jpg) no-repeat top center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      /* -webkit-filter: blur(3px);
+      -moz-filter: blur(3px);
+      -o-filter: blur(3px);
+      -ms-filter: blur(3px);
+      filter: blur(3px); */
+    }
+  </style>
+</head>
+
+<body>
+<div role="presentation" id="hero-bg" class="bg-image"></div>
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title is-1">{{ site.title }}</h1>
+      <!-- <p class="subtitle">Subtitle</p> -->
+
+      <div class="level is-mobile">
+        <div class="level-item is-hidden-mobile"></div>
+        <div class="level-item has-text-centered">
+          <div style="position:relative;width:90%;height:400px;">
+            <figure class="image bg-image door">
+              <img src="../images/homepage/reddoor.png" style="max-height:400px;width:auto;" />
+            </figure>
+            <div>
+              <p class="title">Books</p>
+            </div>
+          </div>
+        </div>
+        <div class="level-item has-text-centered">
+          <div style="position:relative;width:90%;height:400px;">
+            <figure class="image bg-image door">
+              <img src="../images/homepage/bluedoor.png" style="max-height:400px;width:auto;" />
+            </figure>
+            <div>
+              <p class="title">Books</p>
+            </div>
+          </div>
+        </div>
+        <div class="level-item is-hidden-mobile"></div>
+      </div>
+
+      <p class="title is-4">
+        Sign up for the newsletter
+      </p>
+      <div class="field has-addons has-addons-centered">
+        <div class="control">
+          <input class="input" type="text" placeholder="your@email.address">
+        </div>
+        <div class="control">
+          <button class="button is-info">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>

@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/juliahallmark/juliahallmark.github.io#readme",
   "dependencies": {
-    "@tinacms/cli": "^1.5.22",
-    "tinacms": "^1.5.13"
+    "@tinacms/cli": "^1.6.1",
+    "tinacms": "^2.2.1"
   }
 }

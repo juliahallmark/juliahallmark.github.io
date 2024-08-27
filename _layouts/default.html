@@ -3,30 +3,92 @@
 
 <head>
   <meta charset="utf-8">
-  <title>{{ page.title }} | {{ site.title }}</title>
-  <meta name="description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
+  <title>{% if page.title != "Home" %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ site.description }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <meta property="og:title" content="{{ page.title }}">
-  <meta property="og:description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:description" content="{{ site.description }}">
   <meta property="og:type" content="website">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:image" content="{% if page.featuredImage %}{{ page.featuredImage | absolute_url }}{% else %}{{ site.logo | absolute_url }}{% endif %}">
+  <meta property="og:image" content="{{ site.logo | absolute_url }}">
 
   <link rel="apple-touch-icon" href="{{ site.logo | absolute_url }}">
   <!-- Place favicon.ico in the root directory -->
 
-  <link rel="stylesheet" href="{{ '/assets/styles.css' | absolute_url }}">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.1/css/bulma.min.css">
+  <!-- <link rel="stylesheet" href="{{ '/assets/styles.css' | absolute_url }}"> -->
+  <style>
+    .bg-image {
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+    }
+    .door {
+      -webkit-background-size: contain;
+      -moz-background-size: contain;
+      -o-background-size: contain;
+      background-size: contain;
+    }
+    #hero-bg {
+      background: url(../images/homepage/milky-way-4416194_1920.jpg) no-repeat top center fixed; 
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      /* -webkit-filter: blur(3px);
+      -moz-filter: blur(3px);
+      -o-filter: blur(3px);
+      -ms-filter: blur(3px);
+      filter: blur(3px); */
+    }
+  </style>
 </head>
 
 <body>
-{% include nav.html %}
-<main>
+<header class="container">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{ site.url }}" title="Home">
+        <img src="{{ site.logo | absolute_url }}" style="max-height:{{ site.max_logo_height }}px;" alt="{{ site.title }} logo" />
+      </a>
+  
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNav" onclick="mobileNav(event)">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+  
+    <div id="mainNav" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/children">
+          Children's Books
+        </a>
+        <a class="navbar-item" href="/young-adult">
+          Young Adult Books
+        </a>
+        <a class="navbar-item" href="/blog">
+          Blog
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+<main class="is-relative">
 {{ content }}
 </main>
 {% include footer.html %}
 {% if site.advanced_footer_html %}
 {{ site.advanced_footer_html }}
 {% endif %}
+<script>
+function mobileNav(event){
+  const target = event.target.nodeName.toLowerCase() !== 'a' ? event.target.closest('a') : event.target;
+  target.classList.toggle('is-active');
+  document.getElementById(target.dataset.target).classList.toggle('is-active');
+}
+</script>
 </body>
 </html>

@@ -1,4 +1,48 @@
 ---
-layout: homepage
+layout: default
 title: Home
 ---
+<section class="hero">
+  <div role="presentation" id="hero-bg" class="bg-image"></div>
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-1">Latest Release</h2>
+      {% assign latest_book = site.books | sort: "published" | reverse | first %}
+      <div class="columns">
+        <div class="column is-two-fifths has-text-centered">
+          <img src="{{ latest_book.cover }}" style="max-height:50vh;width:auto" />
+        </div>
+        <div class="column">
+          <p class="title">{{ latest_book.title }}</p>
+          <div class="content is-medium">
+            <p>{{ latest_book.blurb }}</p>
+          </div>
+          <a class="button" href="{{ latest_book.url }}">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section has-background-black-bis">
+  <div class="level">
+    <div class="level-item">
+      <p class="title is-4">
+        Sign up for the newsletter
+      </p>
+    </div>
+    <div class="level-item">
+      <div class="field has-addons has-addons-centered">
+        <div class="control">
+          <input class="input" type="text" placeholder="your@email.address">
+        </div>
+        <div class="control">
+          <button class="button is-info">
+            Sign Up
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

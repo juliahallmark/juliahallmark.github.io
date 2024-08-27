@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en-us">
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ page.title }} | {{ site.title }}</title>
+  <meta name="description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="{{ page.title }}">
+  <meta property="og:description" content="{% if page.summary %}{{ page.summary }}{% else %}{{ site.description }}{% endif %}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  <meta property="og:image" content="{% if page.featuredImage %}{{ page.featuredImage | absolute_url }}{% else %}{{ site.logo | absolute_url }}{% endif %}">
+
+  <link rel="apple-touch-icon" href="{{ site.logo | absolute_url }}">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="{{ '/assets/styles.css' | absolute_url }}">
+</head>
+
+<body>
+{% include nav.html %}
+<main>
+{{ content }}
+</main>
+{% include footer.html %}
+{% if site.advanced_footer_html %}
+{{ site.advanced_footer_html }}
+{% endif %}
+</body>
+</html>

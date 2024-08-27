@@ -1,5 +1,5 @@
 ---
-layout: book
+layout: children_book
 title: The Chase
 type: children
 cover: /images/the-chase-cover.jpg

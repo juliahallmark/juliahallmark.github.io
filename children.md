@@ -1,5 +1,5 @@
 ---
-layout: book_list
+layout: children_book_list
 title: Children's Books
 type: children
 ---

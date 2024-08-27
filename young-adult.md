@@ -1,5 +1,5 @@
 ---
-layout: book_list
+layout: children_book_list
 title: Young Adult Books
 type: young adult
 ---

@@ -5,23 +5,35 @@
       <div class="column is-half mb-2 has-text-centered">
         {% if profile.find_me_on.size > 0 %}
         <h2 class="is-size-6 has-text-weight-bold pb-3">Find me on</h2>
-        <div class="columns is-mobile is-multiline is-centered">
-          {% for link in profile.find_me_on %}
-          {% assign vendor = site.vendors[link.vendor] %}
-          <div class="is-narrow m-1">
-            <a class="button is-normal is-danger px-2 py-1" href="{{ link.url }}" target="_blank">{{ vendor.name }}</a>
+        <div class="is-flex is-justify-content-center">
+          <div class="buttons are-normal">
+            {% for link in profile.find_me_on %}
+            {% assign vendor = site.vendors[link.vendor] %}
+            <a class="button" href="{{ link.url }}" target="_blank">{{ vendor.name }}</a>
+            {% endfor %}
           </div>
-          {% endfor %}
         </div>
         {% endif %}
       </div>
       <div class="column mb-2 has-text-centered">
-        <a class="button is-large is-warning outlined-title is-font-bubblegum_sans" href="{% if site.newsletter.size > 0 %}{{ site.newsletter }}{% else %}{% link blog/index.html %}{% endif %}" target="_blank">Get updates</a>
+        <h2 class="is-size-6 has-text-weight-bold pb-3">Sign up for my newsletter</h2>
+        <form method="post" action="{% if site.newsletter.size > 0 %}{{ site.newsletter }}{% else %}{% link blog/index.html %}{% endif %}">
+          <div class="field has-addons has-addons-centered">
+            <div class="control">
+              <input class="input" type="text" placeholder="your@email.address">
+            </div>
+            <div class="control">
+              <button class="button is-primary">
+                Sign Up
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
-      <div class="column is-narrow">
-        <p>&copy; <span id="copyrightYear">2023</span> {{ profile.my_name }}</p>
-        <script>(function() {document.getElementById('copyrightYear').innerHTML = (new Date()).getFullYear();})()</script>
-      </div>
+    </div>
+    <div class="is-flex is-justify-content-end">
+      <p>&copy; <span id="copyrightYear">2024</span> {{ profile.my_name }}</p>
+      <script>(function() {document.getElementById('copyrightYear').innerHTML = (new Date()).getFullYear();})()</script>
     </div>
   </div>
 </footer>

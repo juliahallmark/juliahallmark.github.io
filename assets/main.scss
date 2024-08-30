@@ -1,0 +1,32 @@
+---
+---
+
+@charset "utf-8";
+
+.bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+}
+.door {
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}
+#hero-bg {
+  background: url(../images/homepage/milky-way-4416194_1920.jpg) no-repeat top center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  /* -webkit-filter: blur(3px);
+  -moz-filter: blur(3px);
+  -o-filter: blur(3px);
+  -ms-filter: blur(3px);
+  filter: blur(3px); */
+}
+.has-site-bg {
+  background-color: var(--bulma-body-background-color);
+  color: var(--bulma-body-color);
+}

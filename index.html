@@ -5,15 +5,17 @@ title: Home
 <section class="hero">
   <div role="presentation" id="hero-bg" class="bg-image"></div>
   <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-1">Latest Release</h2>
+    <div class="container has-text-white">
+      <h2 class="title is-1 has-text-centered has-text-white">
+        Latest Release
+      </h2>
       {% assign latest_book = site.books | sort: "published" | reverse | first %}
       <div class="columns">
         <div class="column is-two-fifths has-text-centered">
           <img src="{{ latest_book.cover }}" style="max-height:50vh;width:auto" />
         </div>
         <div class="column">
-          <p class="title">{{ latest_book.title }}</p>
+          <p class="title has-text-white">{{ latest_book.title }}</p>
           <div class="content is-medium">
             <p>{{ latest_book.blurb }}</p>
           </div>
@@ -25,23 +27,74 @@ title: Home
     </div>
   </div>
 </section>
-<section class="section has-background-black-bis">
-  <div class="level">
-    <div class="level-item">
-      <p class="title is-4">
-        Sign up for the newsletter
-      </p>
+<section class="section has-site-bg">
+  <div class="container">
+    {% assign profile = site.pages | where: 'name', 'about.md' | first %}
+    <h2 class="title is-1 has-text-centered">
+      Who Am I?
+    </h2>
+    <div class="columns">
+      <div class="column is-three-quarters">
+        <article class="content is-medium">
+          {{ profile.content | markdownify }}
+        </article>
+      </div>
+      <div class="column">
+        <figure class="image mx-auto" style="max-width:210px;">
+          <img src="{{ profile.photo | absolute_url }}" class="is-rounded" alt="{{ profile.my_name }}">
+        </figure>
+      </div>
     </div>
-    <div class="level-item">
-      <div class="field has-addons has-addons-centered">
-        <div class="control">
-          <input class="input" type="text" placeholder="your@email.address">
+  </div>
+</section>
+<section class="hero">
+  <div role="presentation" id="hero-bg" class="bg-image"></div>
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title has-text-centered is-1 has-text-white">
+        Discover More
+      </h2>
+      <div class="level is-mobile">
+        <div class="level-item is-hidden-mobile"></div>
+        <div class="level-item has-text-centered">
+          <!-- <div class="is-relative is-flex is-justify-content-center is-align-items-center" style="width:90%;height:400px;">
+            <figure class="image bg-image">
+              <img src="../images/homepage/reddoor.png" style="max-height:400px;width:auto;" />
+            </figure>
+            <div>
+              <a class="button is-large is-light is-outlined has-text-weight-bold" href="{% link children.md %}">
+                Children's<br />
+                Books
+              </a>
+            </div>
+          </div> -->
+          <div>
+            <a class="button is-large is-primary" href="{% link children.md %}">
+              Explore<br />
+              Children's Books
+            </a>
+          </div>
         </div>
-        <div class="control">
-          <button class="button is-info">
-            Sign Up
-          </button>
+        <div class="level-item has-text-centered">
+          <!-- <div class="is-relative is-flex is-justify-content-center is-align-items-center" style="width:90%;height:400px;">
+            <figure class="image bg-image">
+              <img src="../images/homepage/bluedoor.png" style="max-height:400px;width:auto;" />
+            </figure>
+            <div>
+              <a class="button is-large is-light is-outlined has-text-weight-bold" href="{% link young-adult.md %}">
+                Young Adult<br />
+                Books
+              </a>
+            </div>
+          </div> -->
+          <div>
+            <a class="button is-large is-link" href="{% link young-adult.md %}">
+              Explore<br />
+              Young Adult Books
+            </a>
+          </div>
         </div>
+        <div class="level-item is-hidden-mobile"></div>
       </div>
     </div>
   </div>

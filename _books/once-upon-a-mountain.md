@@ -13,4 +13,4 @@ age_range: 10
 layout: book
 ---
 
-Here's some text for the draft!
+#### [Here's some text for the draft!](https://www.amazon.com/Once-Upon-Mountain-Julia-Hallmark-ebook/dp/B0D92xppl6/ref=sr11?dib=eyj2ljoiMSJ9.7ELOFD8UxFAcQhHBho1zqw.msWLuF6sFfla5H6RnnD03csv5kTxlfisBYLCvVUrA\&dib=tag=se\&keywords=9798887516820\&qid=17246926892689\&sr=8-1 "Once Upon a Mountain")

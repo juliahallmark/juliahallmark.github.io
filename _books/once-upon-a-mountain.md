@@ -6,7 +6,8 @@ blurb: >-
 type: young adult
 cover: /images/Once Upon a Mountain book cover/Once Upon a Mountain Book Cover.jpg
 links:
-  - {}
+  - url: >-
+      https://www.amazon.com/Once-Upob-Mountain-Julia-Hallmark-ebook/dp/BOD92XPPL/ref=sr11?dib=eyJ2ljoiMSJ9.7ELOFD8UxFAcQhho1zqw.msWLuF6sFfla5H6RnnD03csv5kTxlfisBYLCvVUrA&dibtag=se&keywords=9798887516820&qid=1724692689&sr=8-1
 published: 2024-05-29T07:00:00.000Z
 length: 215
 age_range: 10

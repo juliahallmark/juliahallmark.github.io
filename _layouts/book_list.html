@@ -1,0 +1,63 @@
+---
+layout: default
+---
+<header class="hero">
+  <div role="presentation" class="bg-image"></div>
+  <div class="hero-body">
+    <div class="container has-text-white">
+      <h1 class="title is-1 has-text-centered has-text-white">
+        {{ page.title }}
+      </h1>
+    </div>
+  </div>
+</header>
+<section class="section has-site-bg">
+  <div class="container">
+    <div class="content is-medium">
+      {{ page.content | markdownify }}
+    </div>
+  </div>
+</section>
+<section class="hero">
+  <div role="presentation" class="bg-image"></div>
+  <div class="hero-body">
+    <div class="container has-text-white">
+      <h2 class="is-sr-only">Published Works</h2>
+      <div class="columns is-centered is-multiline is-mobile">
+        {% assign books = site.books | where: "type", page.type %}
+        {% for book in books %}
+        <div class="column is-full-mobile is-half-tablet is-one-third-desktop">
+          <a href="{{ book.url }}">
+            <article class="card">
+              <div class="card-image">
+                <figure class="image">
+                  <img src="{{ book.cover | absolute_url }}" alt="{{ book.title }} cover" class="mx-auto pt-2" style="max-height:300px;width:auto;" />
+                </figure>
+              </div>
+              <div class="card-content has-text-centered">
+                <p class="title">
+                  {{ book.title }}
+                </p>
+                {% if book.published %}
+                <p class="subtitle">
+                  Published {{ book.published | date_to_string: "ordinal", "US" }}
+                </p>
+                {% endif %}
+                {% if book.blurb %}
+                <div class="content">
+                  <p>{{ book.blurb }}</p>
+                </div>
+                {% endif %}
+              </div>
+            </article>
+          </a>
+        </div>
+        {% else %}
+        <div class="column is-full">
+          <p class="is-size-4">Check back later when I've published some {{ page.title | downcase }} books!</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>

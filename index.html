@@ -3,12 +3,12 @@ layout: default
 title: Home
 ---
 <section class="hero">
-  <div role="presentation" id="hero-bg" class="bg-image"></div>
+  <div role="presentation" class="bg-image"></div>
   <div class="hero-body">
     <div class="container has-text-white">
-      <h2 class="title is-1 has-text-centered has-text-white">
+      <h1 class="title is-1 has-text-centered has-text-white">
         Latest Release
-      </h2>
+      </h1>
       {% assign latest_book = site.books | sort: "published" | reverse | first %}
       <div class="columns">
         <div class="column is-two-fifths has-text-centered">
@@ -30,9 +30,9 @@ title: Home
 <section class="section has-site-bg">
   <div class="container">
     {% assign profile = site.pages | where: 'name', 'about.md' | first %}
-    <h2 class="title is-1 has-text-centered">
-      Who Am I?
-    </h2>
+    <h1 class="title is-1 has-text-centered">
+      About the Author
+    </h1>
     <div class="columns">
       <div class="column is-three-quarters">
         <article class="content is-medium">
@@ -48,12 +48,12 @@ title: Home
   </div>
 </section>
 <section class="hero">
-  <div role="presentation" id="hero-bg" class="bg-image"></div>
+  <div role="presentation" class="bg-image"></div>
   <div class="hero-body">
     <div class="container">
-      <h2 class="title has-text-centered is-1 has-text-white">
-        Discover More
-      </h2>
+      <h1 class="title has-text-centered is-1 has-text-white">
+        Explore
+      </h1>
       <div class="level is-mobile">
         <div class="level-item is-hidden-mobile"></div>
         <div class="level-item has-text-centered">
@@ -68,12 +68,9 @@ title: Home
               </a>
             </div>
           </div> -->
-          <div>
-            <a class="button is-large is-primary" href="{% link children.md %}">
-              Explore<br />
-              Children's Books
-            </a>
-          </div>
+          <a class="button is-large is-danger" href="{% link children.md %}">
+            Children's Books
+          </a>
         </div>
         <div class="level-item has-text-centered">
           <!-- <div class="is-relative is-flex is-justify-content-center is-align-items-center" style="width:90%;height:400px;">
@@ -87,12 +84,14 @@ title: Home
               </a>
             </div>
           </div> -->
-          <div>
-            <a class="button is-large is-link" href="{% link young-adult.md %}">
-              Explore<br />
-              Young Adult Books
-            </a>
-          </div>
+          <a class="button is-large is-link" href="{% link young-adult.md %}">
+            Young Adult Books
+          </a>
+        </div>
+        <div class="level-item has-text-centered">
+          <a class="button is-large is-primary" href="{% link blog/index.html %}">
+            Blog Updates
+          </a>
         </div>
         <div class="level-item is-hidden-mobile"></div>
       </div>

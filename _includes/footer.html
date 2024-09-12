@@ -5,13 +5,11 @@
       <div class="column is-half mb-2 has-text-centered">
         {% if profile.find_me_on.size > 0 %}
         <h2 class="is-size-6 has-text-weight-bold pb-3">Find me on</h2>
-        <div class="is-flex is-justify-content-center">
-          <div class="buttons are-normal">
-            {% for link in profile.find_me_on %}
-            {% assign vendor = site.vendors[link.vendor] %}
-            <a class="button" href="{{ link.url }}" target="_blank">{{ vendor.name }}</a>
-            {% endfor %}
-          </div>
+        <div class="buttons are-normal is-centered">
+          {% for link in profile.find_me_on %}
+          {% assign vendor = site.vendors[link.vendor] %}
+          <a class="button" href="{{ link.url }}" target="_blank">{{ vendor.name }}</a>
+          {% endfor %}
         </div>
         {% endif %}
       </div>

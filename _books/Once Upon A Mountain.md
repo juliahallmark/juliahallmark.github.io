@@ -1,5 +1,5 @@
 ---
-layout: children_book
+layout: book
 type: young adult
 cover: 'https://m.media-amazon.com/images/I/91kncw8rdML._SY425_.jpg'
 length: 240

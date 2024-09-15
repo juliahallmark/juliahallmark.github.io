@@ -1,0 +1,45 @@
+---
+layout: default
+type: blog
+---
+<header class="hero">
+  <div role="presentation" class="bg-image"></div>
+  <div class="hero-body">
+    <div class="container has-text-white">
+      <h1 class="title is-1 has-text-centered has-text-white">
+        {{ page.title }}
+      </h1>
+      <div class="subtitle has-text-centered has-text-white has-hero-contrast-background">
+        {% if page.date %}
+        <p>
+          Posted {{ page.date | date_to_string: "ordinal", "US" }}
+          {% comment %}
+          {% if page.categories.size > 0 %}
+          in {{ page.categories | join }}
+          {% endif %}
+          {% endcomment %}
+        </p>
+        {% endif %}
+        {% if page.tags.size > 0 %}
+        <div class="tags">
+          {% for tag in page.tags %}
+          <a href="{% link blog/tagged.html %}?tag={{tag}}" class="tag is-primary has-text-black">{{ tag }}</a>
+          {% endfor %}
+        </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</header>
+<section class="section has-site-bg">
+  <div class="container">
+    <article class="section content is-medium">
+      {% if page.featured_image.size > 0 %}
+      <figure class="image">
+        <img src="{{ page.featured_image }}" style="max-height:400px;width:auto;" />
+      </figure>
+      {% endif %}
+      {{ page.content | markdownify }}
+    </article>
+  </div>
+</section>

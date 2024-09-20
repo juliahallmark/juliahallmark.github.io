@@ -24,9 +24,20 @@
 <header class="container">
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-      <a class="navbar-item{% if page.title == 'Home' %} has-background-info has-text-black{% endif %}" href="{{ site.url }}" title="Home">
-        <img src="{{ site.logo | absolute_url }}" style="max-height:{{ site.max_logo_height }}px;" alt="{{ site.title }} logo" />
-        <span class="ml-2 has-text-weight-semibold">{{ site.title }}</span>
+      <a
+        class="navbar-item{% if page.title == 'Home' %} has-background-info has-text-black{% endif %} py-0"
+        href="{{ site.url }}"
+        title="Home"
+      >
+        <img
+          src="{{ site.logo | absolute_url }}"
+          style="max-height:{{ site.max_logo_height }}px;"
+          class="logo-dark-bg-contrast"
+          alt="{{ site.title }} logo"
+        />
+        <span class="ml-2 has-text-weight-semibold" style="max-width:21ch;">
+          {{ site.title }}
+        </span>
       </a>
   
       <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="mainNav" onclick="mobileNav(event)">
@@ -38,7 +49,7 @@
     </div>
   
     <div id="mainNav" class="navbar-menu">
-      <div class="navbar-start">
+      <div class="navbar-start ml-6">
         <a class="navbar-item{% if page.type == 'children' %} has-background-danger has-text-black{% endif %}" href="/children">
           Children's Books
         </a>

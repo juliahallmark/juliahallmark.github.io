@@ -1,5 +1,5 @@
 ---
-layout: children_default
+layout: default
 my_name: Julia Hallmark
 photo: /images/julia-hallmark.jpg
 email: authorjuliahallmark@gmail.com

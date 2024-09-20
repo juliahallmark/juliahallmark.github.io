@@ -39,11 +39,6 @@ export const siteConfig = {
       required: true,
     },
     {
-      type: "string",
-      name: "homepage_greeting",
-      label: "homepage greeting",
-    },
-    {
       type: "number",
       name: "paginate",
       label: "blog posts per page",

@@ -56,7 +56,7 @@
         <a class="navbar-item{% if page.type == 'young adult' %} has-background-link has-text-white{% endif %}" href="/young-adult">
           Young Adult Books
         </a>
-        <a class="navbar-item px-6{% if page.type == 'blog' %} has-background-primary has-text-black{% endif %}" href="/blog">
+        <a class="navbar-item px-6{% if page.layout == 'post' or page.url contains '/blog' %} has-background-primary has-text-black{% endif %}" href="/blog">
           Blog
         </a>
       </div>

@@ -1,6 +1,6 @@
 ---
 layout: book
-type: young adult
+type: science fiction/fantasy
 cover: 'https://m.media-amazon.com/images/I/91kncw8rdML._SY425_.jpg'
 length: 240
 age_range: 13

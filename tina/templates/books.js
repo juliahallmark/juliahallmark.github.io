@@ -54,8 +54,16 @@ export const books = {
           label: "Children",
         },
         {
-          value: "young adult",
-          label: "Young Adult",
+          value: 'science fiction/fantasy',
+          label: 'Science Fiction/Fantasy',
+        },
+        {
+          value: 'historical fiction',
+          label: 'Historical Fiction',
+        },
+        {
+          value: 'nonfiction',
+          label: 'Nonfiction',
         },
       ],
     },

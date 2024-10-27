@@ -20,8 +20,8 @@ sections:
   path: children.md
   label: Children's Page
 - type: document
-  path: young-adult.md
-  label: Young Adult Page
+  path: science-fiction-fantasy.md
+  label: Science Fiction/Fantasy Page
 - type: document
   path: about.md
   label: Profile

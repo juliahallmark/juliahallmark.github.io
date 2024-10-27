@@ -51,13 +51,14 @@
     <div id="mainNav" class="navbar-menu">
       <div class="navbar-start ml-6">
         <a class="navbar-item{% if page.type == 'children' %} has-background-danger has-text-black{% endif %}" href="/children">
-          Children's Books
+          <img src="{% link favicon_children.ico %}" class="is-inline" alt="small gray dog" />
+          <span class="ml-1">Children's Books</span>
         </a>
-        <a class="navbar-item{% if page.type == 'young adult' %} has-background-link has-text-white{% endif %}" href="/young-adult">
-          Young Adult Books
+        <a class="navbar-item{% if page.type == 'science fiction/fantasy' %} has-background-link has-text-white{% endif %}" href="/science-fiction-fantasy">
+          🚀 Science Fiction/<wbr>Fantasy
         </a>
         <a class="navbar-item px-6{% if page.layout == 'post' or page.url contains '/blog' %} has-background-primary has-text-black{% endif %}" href="/blog">
-          Blog
+          📢 Blog
         </a>
       </div>
     </div>

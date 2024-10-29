@@ -1,10 +1,4 @@
-title: Be Still and Know Books by Julia Hallmark
-description: 'Where faith is explored in stories told, and anything is possible!'
-logo: /images/logo.png
 max_logo_height: 100
-url: 'https://juliahallmark.com'
-newsletter: ''
-advanced_footer_html: ''
 timezone: America/Los_Angeles
 permalink: '/blog/:year/:slug:output_ext'
 vendors:
@@ -32,7 +26,6 @@ sass:
   sass_dir: _sass
 plugins:
   - jekyll-paginate
-paginate: 10
 paginate_path: '/blog/page:num/'
 collections:
   books:
@@ -47,3 +40,11 @@ exclude:
   - tina
   - .forestry
   - .github
+title: Be Still and Know Books by Julia Hallmark
+description: 'Where faith is explored in stories told, and anything is possible!'
+logo: /images/logo.png
+background: /images/homepage/mtdiablo2.jpg
+url: 'https://juliahallmark.com'
+paginate: 10
+newsletter: ''
+advanced_footer_html: ''

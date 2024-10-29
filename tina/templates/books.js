@@ -74,6 +74,15 @@ export const books = {
       description: "An image of the book's cover",
     },
     {
+      type: "string",
+      name: "video_embed",
+      label: "Featured Video",
+      description: "The embed code of a YouTube video to display",
+      ui: {
+        component: 'textarea',
+      },
+    },
+    {
       name: "links",
       label: "Buy Links",
       type: "object",

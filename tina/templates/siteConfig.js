@@ -33,6 +33,11 @@ export const siteConfig = {
       label: "logo",
     },
     {
+      type: "image",
+      name: "background",
+      label: "background image",
+    },
+    {
       type: "string",
       name: "url",
       label: "url",

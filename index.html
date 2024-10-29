@@ -19,6 +19,11 @@ title: Home
           <div class="content is-medium has-hero-contrast-background">
             <p>{{ latest_book.blurb }}</p>
           </div>
+          {% if latest_book.video_embed %}
+          <figure class="image is-16by9">
+            {{ latest_book.video_embed }}
+          </figure>
+          {% endif %}
           <a class="button is-info" href="{{ latest_book.url }}">
             Learn More
           </a>

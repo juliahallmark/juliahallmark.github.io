@@ -2,6 +2,8 @@
 layout: book
 type: science fiction/fantasy
 cover: 'https://m.media-amazon.com/images/I/91kncw8rdML._SY425_.jpg'
+video_embed: |
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/q-RBfdntNdY?si=-vhOyeo92BkPCW7P" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 length: 240
 age_range: 13
 blurb: 'What happens when God chooses an unremarkable family to become missionaries to alien civilizations?'

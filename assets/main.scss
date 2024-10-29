@@ -16,13 +16,14 @@
   -o-filter: blur(3px);
   -ms-filter: blur(3px);
   filter: blur(3px); */
-  background: url(/images/homepage/northern-california-1591341_1280.jpg) no-repeat center center fixed;
+  background: url({{ site.background }}) no-repeat center center fixed;
+  // background: url(/images/homepage/northern-california-1591341_1280.jpg) no-repeat center center fixed;
 }
 .has-hero-contrast-background {
   background: rgba(0,0,0,0.5);
   box-shadow: 0 0 45px 30px rgba(0,0,0,0.5);
 }
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   .bg-image {
     background: url(/images/homepage/milky-way-4416194_1920.jpg) no-repeat top center fixed;
   }
@@ -31,7 +32,7 @@
     // background: rgba(255,255,255,0.15);
     // box-shadow: 0 0 3px 2px rgba(255,255,255,0.15);
   }
-}
+} */
 .door {
   -webkit-background-size: contain;
   -moz-background-size: contain;

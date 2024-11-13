@@ -59,24 +59,47 @@ title: Home
       <h1 class="title has-text-centered is-1 has-text-white">
         Explore
       </h1>
-      <div class="level is-mobile">
-        <div class="level-item is-hidden-mobile"></div>
-        <div class="level-item has-text-centered">
+      <div class="columns is-multiline is-centered is-mobile ">
+        {% assign children = site.books | where: "type", "children" %}
+        {% if children.size > 0 %}
+        <div class="column is-narrow has-text-centered">
           <a class="button is-large is-danger" href="{% link children.md %}">
-            Children's Books
+            <img src="{% link favicon_children.ico %}" class="is-inline" alt="small gray dog" />
+            <span class="ml-1">Children's Books</span>
           </a>
         </div>
-        <div class="level-item has-text-centered">
+        {% endif %}
+        {% assign scifi = site.books | where: "type", "science fiction/fantasy" %}
+        {% if scifi.size > 0 %}
+        <div class="column is-narrow has-text-centered">
           <a class="button is-large is-link" href="{% link science-fiction-fantasy.md %}">
-            Science Fiction/<wbr>Fantasy
+            🚀 Science Fiction/<wbr>Fantasy Books
           </a>
         </div>
-        <div class="level-item has-text-centered">
+        {% endif %}
+        {% assign historical = site.books | where: "type", "historical fiction" %}
+        {% if historical.size > 0 %}
+        <div class="column is-narrow has-text-centered">
+          <a class="button is-large is-warning" href="{% link historical-fiction.md %}">
+            <img src="{% link assets/biplane.svg %}" class="is-inline" alt="world war 2 biplane" />
+            <span class="ml-1">Historical Fiction Books</span>
+          </a>
+        </div>
+        {% endif %}
+        {% assign non = site.books | where: "type", "nonfiction" %}
+        {% if non.size > 0 %}
+        <div class="column is-narrow has-text-centered">
+          <a class="button is-large is-success" href="{% link nonfiction.md %}">
+            <img src="{% link assets/typewriter.svg %}" class="is-inline" alt="typewriter" />
+            <span class="ml-1">Non-Fiction Books</span>
+          </a>
+        </div>
+        {% endif %}
+        <div class="column is-narrow has-text-centered">
           <a class="button is-large is-primary" href="{% link blog/index.html %}">
-            Blog Updates
+            📢 Blog Updates
           </a>
         </div>
-        <div class="level-item is-hidden-mobile"></div>
       </div>
     </div>
   </div>

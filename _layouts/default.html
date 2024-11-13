@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<header class="container">
+<header class="container is-widescreen">
   <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
       <a
@@ -35,7 +35,7 @@
           class="logo-dark-bg-contrast"
           alt="{{ site.title }} logo"
         />
-        <span class="ml-2 has-text-weight-semibold" style="max-width:21ch;">
+        <span class="ml-1 has-text-weight-semibold" style="max-width:21ch;">
           {{ site.title }}
         </span>
       </a>
@@ -49,15 +49,29 @@
     </div>
   
     <div id="mainNav" class="navbar-menu">
-      <div class="navbar-start ml-6">
-        <a class="navbar-item{% if page.type == 'children' %} has-background-danger has-text-black{% endif %}" href="/children">
+      <div class="navbar-start ml-2">
+        <a class="navbar-item{% if page.type == 'children' %} has-background-danger has-text-black{% endif %}" href="{% link children.md %}">
           <img src="{% link favicon_children.ico %}" class="is-inline" alt="small gray dog" />
-          <span class="ml-1">Children's Books</span>
+          <span>Children's Books</span>
         </a>
-        <a class="navbar-item{% if page.type == 'science fiction/fantasy' %} has-background-link has-text-white{% endif %}" href="/science-fiction-fantasy">
+        <a class="navbar-item{% if page.type == 'science fiction/fantasy' %} has-background-link has-text-white{% endif %}" href="{% link science-fiction-fantasy.md %}">
           🚀 Science Fiction/<wbr>Fantasy
         </a>
-        <a class="navbar-item px-6{% if page.layout == 'post' or page.url contains '/blog' %} has-background-primary has-text-black{% endif %}" href="/blog">
+        {% assign historical = site.books | where: "type", "historical-fiction" %}
+        {% if historical.size > 0 %}
+        <a class="navbar-item{% if page.type == 'historical fiction' %} has-background-warning has-text-white{% endif %}" href="{% link historical-fiction.md %}">
+          <img src="{% link assets/biplane.svg %}" class="is-inline" alt="world war 2 biplane" />
+          <span>Historical Fiction</span>
+        </a>
+        {% endif %}
+        {% assign non = site.books | where: "type", "nonfiction" %}
+        {% if non.size > 0 %}
+        <a class="navbar-item{% if page.type == 'nonfiction' %} has-background-warning has-text-white{% endif %}" href="{% link nonfiction.md %}">
+          <img src="{% link assets/typewriter.svg %}" class="is-inline" alt="typewriter" />
+          <span>Non-Fiction</span>
+        </a>
+        {% endif %}
+        <a class="navbar-item{% if page.layout == 'post' or page.url contains '/blog' %} has-background-primary has-text-black{% endif %}" href="/blog">
           📢 Blog
         </a>
       </div>

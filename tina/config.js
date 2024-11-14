@@ -7,8 +7,8 @@ import { siteConfig } from "./templates/siteConfig";
 
 export default defineConfig({
   branch: 'main',
-  clientId: '09d59101-3dac-45f8-b0ea-9b83fc07ce5a',
-  token: '375ffc4f69add1be82d71cdf1c62763c8d80e079',
+  clientId: '12e0d590-1229-47f9-8dfd-4273adf30f7a',
+  token: 'b8772c17cdef678455d764ea599ff66989f66184',
   client: { skip: true },
   build: {
     outputFolder: "manage-site",

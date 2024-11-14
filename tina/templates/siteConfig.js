@@ -16,13 +16,13 @@ export const siteConfig = {
     {
       type: "string",
       name: "title",
-      label: "website title",
+      label: "Website Title",
       required: true,
     },
     {
       type: "string",
       name: "description",
-      label: "description",
+      label: "Website Description",
       ui: {
         component: "textarea",
       },
@@ -30,33 +30,41 @@ export const siteConfig = {
     {
       type: "image",
       name: "logo",
-      label: "logo",
+      label: "Website Logo",
+      description: 'Appears at the top of every page',
     },
     {
       type: "image",
       name: "background",
-      label: "background image",
+      label: "Background Image",
     },
     {
       type: "string",
       name: "url",
-      label: "url",
+      label: "Website URL",
       required: true,
-    },
-    {
-      type: "number",
-      name: "paginate",
-      label: "blog posts per page",
     },
     {
       type: "string",
       name: "newsletter",
-      label: "newsletter sign up url",
+      label: "Newsletter Sign Up URL",
+    },
+    {
+      type: "string",
+      name: "patron",
+      label: "Patron Page URL",
+    },
+    {
+      type: "number",
+      name: "paginate",
+      label: "Blog Posts Per Page",
+      description: 'How many posts to list on the Blog page before you have to click a "next page" button',
     },
     {
       type: "string",
       name: "advanced_footer_html",
-      label: "advanced footer code",
+      label: "Advanced Footer Code",
+      description: 'Useful for putting Google Analytics code or other things like that on every page',
       ui: {
         component: "textarea",
       },

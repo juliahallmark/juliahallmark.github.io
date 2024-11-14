@@ -45,6 +45,7 @@ description: 'Where faith is explored in stories told, and anything is possible!
 logo: /images/logo.png
 background: /images/homepage/mtdiablo2.jpg
 url: 'https://juliahallmark.com'
-paginate: 10
 newsletter: ''
+patron: ''
+paginate: 10
 advanced_footer_html: ''

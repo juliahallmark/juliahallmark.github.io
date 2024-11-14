@@ -14,19 +14,15 @@
         {% endif %}
       </div>
       <div class="column mb-2 has-text-centered">
-        <h2 class="is-size-6 has-text-weight-bold pb-3">Sign up for my newsletter</h2>
-        <form method="post" action="{% if site.newsletter.size > 0 %}{{ site.newsletter }}{% else %}{% link blog/index.html %}{% endif %}">
-          <div class="field has-addons has-addons-centered">
-            <div class="control">
-              <input class="input" type="text" placeholder="your@email.address">
-            </div>
-            <div class="control">
-              <button class="button is-primary">
-                Sign Up
-              </button>
-            </div>
-          </div>
-        </form>
+        <h2 class="is-size-6 has-text-weight-bold pb-3">Get updates</h2>
+        <div class="buttons are-normal is-centered">
+          <a class="button is-primary" href="{% if site.newsletter.size > 0 %}{{ site.newsletter }}{% else %}#{% endif %}" target="_blank">
+            Subscribe to my newsletter
+          </a>
+          <a class="button is-warning" href="{% if site.patron.size > 0 %}{{ site.patron }}{% else %}#{% endif %}" target="_blank">
+            Patron Page
+          </a>
+        </div>
       </div>
     </div>
     <div class="is-flex is-justify-content-end">

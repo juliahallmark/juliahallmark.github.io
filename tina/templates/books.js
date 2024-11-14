@@ -12,6 +12,10 @@ export const books = {
     }
   },
   ui: {
+    allowedActions: {
+      create: true,
+      createNestedFolder: false,
+    },
     filename: {
       readonly: true,
       slugify: (values) => {
@@ -29,19 +33,6 @@ export const books = {
       label: "Title",
       isTitle: true,
       required: true,
-    },
-    {
-      type: "string",
-      name: "blurb",
-      label: "Blurb",
-      description: "A short sentence about the book",
-    },
-    {
-      type: "rich-text",
-      name: "body",
-      label: "Full Book Description",
-      description: "This is the text that appears on the book page",
-      isBody: true,
     },
     {
       type: "string",
@@ -66,6 +57,19 @@ export const books = {
           label: 'Nonfiction',
         },
       ],
+    },
+    {
+      type: "string",
+      name: "blurb",
+      label: "Blurb",
+      description: "A short sentence about the book",
+    },
+    {
+      type: "rich-text",
+      name: "body",
+      label: "Full Book Description",
+      description: "This is the text that appears on the book page",
+      isBody: true,
     },
     {
       type: "image",

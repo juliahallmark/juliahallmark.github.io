@@ -5,23 +5,29 @@
       <div class="column is-half mb-2 has-text-centered">
         {% if profile.find_me_on.size > 0 %}
         <h2 class="is-size-6 has-text-weight-bold pb-3">Find me on</h2>
-        <div class="columns is-mobile is-multiline is-centered">
+        <div class="buttons are-normal is-centered">
           {% for link in profile.find_me_on %}
           {% assign vendor = site.vendors[link.vendor] %}
-          <div class="is-narrow m-1">
-            <a class="button is-normal is-danger px-2 py-1" href="{{ link.url }}" target="_blank">{{ vendor.name }}</a>
-          </div>
+          <a class="button" href="{{ link.url }}" target="_blank">{{ vendor.name }}</a>
           {% endfor %}
         </div>
         {% endif %}
       </div>
       <div class="column mb-2 has-text-centered">
-        <a class="button is-large is-warning outlined-title is-font-bubblegum_sans" href="{% if site.newsletter.size > 0 %}{{ site.newsletter }}{% else %}{% link blog/index.html %}{% endif %}" target="_blank">Get updates</a>
+        <h2 class="is-size-6 has-text-weight-bold pb-3">Get updates</h2>
+        <div class="buttons are-normal is-centered">
+          <a class="button is-primary" href="{% if site.newsletter.size > 0 %}{{ site.newsletter }}{% else %}#{% endif %}" target="_blank">
+            Subscribe to my newsletter
+          </a>
+          <a class="button is-warning" href="{% if site.patron.size > 0 %}{{ site.patron }}{% else %}#{% endif %}" target="_blank">
+            Patron Page
+          </a>
+        </div>
       </div>
-      <div class="column is-narrow">
-        <p>&copy; <span id="copyrightYear">2023</span> {{ profile.my_name }}</p>
-        <script>(function() {document.getElementById('copyrightYear').innerHTML = (new Date()).getFullYear();})()</script>
-      </div>
+    </div>
+    <div class="is-flex is-justify-content-end">
+      <p>&copy; <span id="copyrightYear">2024</span> {{ profile.my_name }}</p>
+      <script>(function() {document.getElementById('copyrightYear').innerHTML = (new Date()).getFullYear();})()</script>
     </div>
   </div>
 </footer>

@@ -2,87 +2,103 @@
 layout: default
 title: Home
 ---
-{% assign profile = site.pages | where: 'name', 'about.md' | first %}
-<section class="hero is-link is-fullheight-with-navbar">
-  <div class="container">
-    <div class="hero-body">
-      <div>
-        <div class="columns">
-          <div class="column is-one-quarter">
-            <h1 class="is-hidden-tablet title is-size-1 outlined-title is-font-bubblegum_sans">
-              {{ site.homepage_greeting }}
-            </h1>
-            <figure class="image mx-auto" style="max-width:210px;">
-              <img src="{{ profile.photo | absolute_url }}" class="is-rounded" alt="{{ profile.my_name }}">
-            </figure>
-            <article class="is-hidden-tablet content">
-              {{ profile.content | markdownify }}
-            </article>
-            {% if profile.find_me_on.size > 0 %}
-            <div class="is-hidden-mobile mt-1 columns is-mobile is-centered is-multiline">
-              {% for link in profile.find_me_on %}
-              {% assign vendor = site.vendors[link.vendor] %}
-              <div class="column is-one-fifth">
-                <figure class="image is-32x32 mx-auto">
-                  <a href="{{ link.url }}" title="{{ vendor.name }}" target="_blank">
-                    <img src="{{ vendor.icon | absolute_url }}" alt="{{ vendor.name }}" />
-                  </a>
-                </figure>
-              </div>
-              {% endfor %}
-            </div>
-            {% endif %}
-          </div>
-          <div class="column is-full-mobile is-three-quarters-tablet">
-            <article>
-              <h2 class="sr-only">Published Works</h2>
-              <div class="columns is-multiline is-centered is-mobile">
-              {% assign allbooks = site.books %}
-              {% for book in allbooks %}
-                <figure class="column is-half-mobile is-one-third-tablet has-text-centered is-circled">
-                  <div class="circle-container" role="display" style="transform: rotate({% cycle '-4deg', '42deg', '26deg', '13deg', '63deg' %});">
-                    {% capture circle_color %}{% cycle '#f14668', '#00d1b2', '#fcef35', '#4308b9' %}{% endcapture %}
-                    {% include circle.svg color=circle_color %}
-                  </div>
-                  <a href="{{ book.url }}">
-                    <figcaption class="outlined-title is-size-4 has-text-weight-bold mb-2">{{ book.title }}</figcaption>
-                    <img src="{{ book.cover | absolute_url }}" alt="{{ book.title }} cover" />
-                  </a>
-                </figure>
-              {% endfor %}
-              </div>
-            </article>
-          </div>
+<section class="hero">
+  <div role="presentation" class="bg-image"></div>
+  <div class="hero-body">
+    <div class="container has-text-white">
+      <h1 class="title is-1 has-text-centered has-text-white">
+        Latest Release
+      </h1>
+      {% assign latest_book = site.books | sort: "published" | reverse | first %}
+      <div class="columns">
+        <div class="column is-two-fifths has-text-centered">
+          <img src="{{ latest_book.cover }}" style="max-height:50vh;width:auto" />
         </div>
-        <div class="columns">
-          <div class="column is-two-thirds is-hidden-mobile">
-            <section>
-              <h1 class="title is-size-1 outlined-title is-font-bubblegum_sans">
-                {{ site.homepage_greeting }}
-              </h1>
-              <article class="content is-medium">
-                {{ profile.content | markdownify }}
-              </article>
-            </section>
+        <div class="column">
+          <p class="title has-text-white">{{ latest_book.title }}</p>
+          <div class="content is-medium has-hero-contrast-background">
+            <p>{{ latest_book.blurb }}</p>
           </div>
-          <div class="column is-one-third">
-            <section class="mt-4">
-              <h2 class="title is-size-4 outlined-title is-font-bubblegum_sans">Recent Posts</h2>
-              {% for post in site.posts limit: 3 %}
-                <article class="my-2">
-                  <a href="{{ post.url }}">
-                    <h3 class="title is-size-5">{{ post.title }}</h3>
-                    <p class="subtitle is-size-6">{{ post.date | date_to_string: "ordinal", "US" }}</p>
-                  </a>
-                </article>
-              {% endfor %}
-              {% if site.posts.size > 3 %}
-              <a href="{% link blog/index.html %}" class="link mt-4 is-underlined">
-                See More
-              </a>
-              {% endif %}
-            </section>
-          </div>
+          {% if latest_book.video_embed %}
+          <figure class="image is-16by9">
+            {{ latest_book.video_embed }}
+          </figure>
+          {% endif %}
+          <a class="button is-info" href="{{ latest_book.url }}">
+            Learn More
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section has-site-bg">
+  <div class="container">
+    {% assign profile = site.pages | where: 'name', 'about.md' | first %}
+    <h1 class="title is-1 has-text-centered">
+      About the Author
+    </h1>
+    <div class="columns">
+      <div class="column is-three-quarters">
+        <article class="content is-medium">
+          {{ profile.content | markdownify }}
+        </article>
+      </div>
+      <div class="column">
+        <figure class="image mx-auto" style="max-width:210px;">
+          <img src="{{ profile.photo | absolute_url }}" class="is-rounded" alt="{{ profile.my_name }}">
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="hero">
+  <div role="presentation" class="bg-image"></div>
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title has-text-centered is-1 has-text-white">
+        Explore
+      </h1>
+      <div class="columns is-multiline is-centered is-mobile ">
+        {% assign children = site.books | where: "type", "children" %}
+        {% if children.size > 0 %}
+        <div class="column is-narrow has-text-centered">
+          <a class="button is-large is-danger" href="{% link children.md %}">
+            <img src="{% link favicon_children.ico %}" class="is-inline" alt="small gray dog" />
+            <span class="ml-1">Children's Books</span>
+          </a>
+        </div>
+        {% endif %}
+        {% assign scifi = site.books | where: "type", "science fiction/fantasy" %}
+        {% if scifi.size > 0 %}
+        <div class="column is-narrow has-text-centered">
+          <a class="button is-large is-link" href="{% link science-fiction-fantasy.md %}">
+            🚀 Science Fiction/<wbr>Fantasy Books
+          </a>
+        </div>
+        {% endif %}
+        {% assign historical = site.books | where: "type", "historical fiction" %}
+        {% if historical.size > 0 %}
+        <div class="column is-narrow has-text-centered">
+          <a class="button is-large is-warning" href="{% link historical-fiction.md %}">
+            <img src="{% link assets/biplane.svg %}" class="is-inline" alt="world war 2 biplane" />
+            <span class="ml-1">Historical Fiction Books</span>
+          </a>
+        </div>
+        {% endif %}
+        {% assign non = site.books | where: "type", "nonfiction" %}
+        {% if non.size > 0 %}
+        <div class="column is-narrow has-text-centered">
+          <a class="button is-large is-success" href="{% link nonfiction.md %}">
+            <img src="{% link assets/typewriter.svg %}" class="is-inline" alt="typewriter" />
+            <span class="ml-1">Non-Fiction Books</span>
+          </a>
+        </div>
+        {% endif %}
+        <div class="column is-narrow has-text-centered">
+          <a class="button is-large is-primary" href="{% link blog/index.html %}">
+            📢 Blog Updates
+          </a>
         </div>
       </div>
     </div>

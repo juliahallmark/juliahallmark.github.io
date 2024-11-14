@@ -12,6 +12,10 @@ export const books = {
     }
   },
   ui: {
+    allowedActions: {
+      create: true,
+      createNestedFolder: false,
+    },
     filename: {
       readonly: true,
       slugify: (values) => {
@@ -32,6 +36,30 @@ export const books = {
     },
     {
       type: "string",
+      name: "type",
+      label: "Book Type",
+      description: 'Which list to display the book in',
+      options: [
+        {
+          value: "children",
+          label: "Children",
+        },
+        {
+          value: 'science fiction/fantasy',
+          label: 'Science Fiction/Fantasy',
+        },
+        {
+          value: 'historical fiction',
+          label: 'Historical Fiction',
+        },
+        {
+          value: 'nonfiction',
+          label: 'Nonfiction',
+        },
+      ],
+    },
+    {
+      type: "string",
       name: "blurb",
       label: "Blurb",
       description: "A short sentence about the book",
@@ -44,26 +72,19 @@ export const books = {
       isBody: true,
     },
     {
-      type: "string",
-      name: "type",
-      label: "Book Type",
-      description: 'Which list to display the book in',
-      options: [
-        {
-          value: "children",
-          label: "Children",
-        },
-        {
-          value: "young adult",
-          label: "Young Adult",
-        },
-      ],
-    },
-    {
       type: "image",
       name: "cover",
       label: "Cover",
       description: "An image of the book's cover",
+    },
+    {
+      type: "string",
+      name: "video_embed",
+      label: "Featured Video",
+      description: "The embed code of a YouTube video to display",
+      ui: {
+        component: 'textarea',
+      },
     },
     {
       name: "links",

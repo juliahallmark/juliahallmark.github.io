@@ -18,7 +18,7 @@ fields:
       type: custom
     options:
     - children
-    - young adult
+    - science fiction/fantasy
 - name: cover
   label: cover
   description: An image of the book's cover

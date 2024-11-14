@@ -4,7 +4,7 @@ export const bookLists = {
   name: "book_lists",
   path: "/",
   match: {
-    include: "{children,young-adult}",
+    include: "{children,science-fiction-fantasy,historical-fiction,nonfiction}",
   },
   ui: {
     allowedActions: {
@@ -30,8 +30,16 @@ export const bookLists = {
           label: 'Children',
         },
         {
-          value: 'young adult',
-          label: 'Young Adult',
+          value: 'science fiction/fantasy',
+          label: 'Science Fiction/Fantasy',
+        },
+        {
+          value: 'historical fiction',
+          label: 'Historical Fiction',
+        },
+        {
+          value: 'nonfiction',
+          label: 'Non-Fiction',
         },
       ],
     },

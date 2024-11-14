@@ -1,47 +1,72 @@
 ---
 layout: default
 ---
-<section class="hero is-link is-fullheight-with-navbar">
-  <div class="container">
-    <div class="hero-body">
+<section class="hero">
+  <div role="presentation" class="bg-image"></div>
+  <div class="hero-body">
+    <div class="container has-text-white">
+      <h1 class="title is-1 has-text-centered has-text-white">
+        {{ page.title }}
+      </h1>
       <div class="columns">
-        <div class="column is-one-third">
-          <figure class="image mb-2">
-            <img src="{{ page.cover | absolute_url }}" alt="{{ page.title }} cover" />
-          </figure>
-          {% if page.length %}
-          <p class="mb-2">{{ page.length }} pages long</p>
-          {% endif %}
-          {% if page.age_range %}
-          <p class="mb-2">Intended for age {{ page.age_range }} and up</p>
-          {% endif %}
-          {% if page.links.size > 0 %}
-          {% for link in page.links %}
-          {% assign vendor = site.vendors[link.vendor] %}
-          <p class="mb-2">
-            <a href="{{ link.url }}" class="button {% case vendor.color %}{% when 'red' %}is-danger{% when 'yellow' %}is-warning{% when 'green' %}is-success{% when 'blue' %}is-info{% when 'teal' %}is-primary{% when 'white' %}is-white{% when 'light gray' %}is-light{% when 'dark gray' %}is-dark{% when 'black' %}is-black{% endcase %}">
-              Buy at {{ vendor.name }}
-            </a>
-          </p>
-          {% endfor %}
-          {% endif %}
+        <div class="column is-two-fifths has-text-centered">
+          <img src="{{ page.cover }}" style="max-height:50vh;width:auto" />
         </div>
-        <div class="column is-two-thirds">
-          <section>
-            <h1 class="title is-size-1 outlined-title is-font-bubblegum_sans">
-              {{ page.title }}
-            </h1>
-            {% if page.published %}
-            <p class="subtitle">
-              Published {{ page.published | date_to_string: "ordinal", "US" }}
-            </p>
-            {% endif %}
-            <div class="content">
-              <p>{{ page.content }}</p>
-            </div>
-          </section>
+        <div class="column">
+          {% if page.video_embed %}
+          <figure class="image is-16by9">
+            {{ page.video_embed }}
+          </figure>
+          {% endif %}
+          <article class="content is-medium has-hero-contrast-background">
+            <p>{{ page.content | markdownify }}</p>
+          </article>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+<section class="section has-site-bg">
+  <div class="container">
+    <div class="level">
+      {% if page.published %}
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Published</p>
+          <p class="title is-3">{{ page.published | date_to_string: "ordinal", "US" }}</p>
+        </div>
+      </div>
+      {% endif %}
+      {% if page.length %}
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Pages</p>
+          <p class="title is-3">{{ page.length }}</p>
+        </div>
+      </div>
+      {% endif %}
+      {% if page.age_range %}
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Age Range</p>
+          <p class="title is-3">{{ page.age_range }} &amp; up</p>
+        </div>
+      </div>
+      {% endif %}
+      {% if page.links %}
+      <div class="level-item has-text-centered">
+        <div>
+          <p class="heading">Buy Now</p>
+          <div class="buttons are-small is-centered">
+            {% for link in page.links %}
+            <a href="{{ link.url }}" class="button {% case link.color %}{% when 'red' %}is-danger{% when 'yellow' %}is-warning{% when 'green' %}is-success{% when 'blue' %}is-info{% when 'teal' %}is-primary{% when 'white' %}is-white{% when 'light gray' %}is-light{% when 'dark gray' %}is-dark{% when 'black' %}is-black{% endcase %}">
+              {{ link.vendor }}
+            </a>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endif %}
     </div>
   </div>
 </section>

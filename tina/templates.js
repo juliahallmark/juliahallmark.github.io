@@ -16,7 +16,12 @@ export function bookFields() {
       type: "string",
       name: "type",
       label: "type",
-      options: ["children", "young adult"],
+      options: [
+        "children",
+        "science fiction/fantasy",
+        "historical fiction",
+        "nonfiction",
+      ],
     },
     {
       type: "image",

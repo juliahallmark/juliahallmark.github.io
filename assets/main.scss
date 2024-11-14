@@ -1,0 +1,33 @@
+---
+---
+
+@charset "utf-8";
+
+.bg-image {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background: url({{ site.background }}) no-repeat center center fixed;
+}
+.bg-image + .hero-body .title.has-text-white {
+  -webkit-text-stroke: 1px rgba(0, 0, 0, 0.5);
+  text-stroke: 1px rgba(0, 0, 0, 0.5);
+}
+.has-hero-contrast-background {
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 20px 22px rgba(0, 0, 0, 0.5);
+}
+.door {
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: contain;
+}
+.has-site-bg {
+  background-color: var(--bulma-body-background-color);
+  color: var(--bulma-body-color);
+}

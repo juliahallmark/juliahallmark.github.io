@@ -4,23 +4,23 @@ permalink: '/blog/:year/:slug:output_ext'
 vendors:
   Facebook:
     name: Facebook
-    icon: /images/icons/facebook-icon.png
+    icon: /assets/icons/facebook-icon.png
     color: blue
   Amazon:
     name: Amazon.com
-    icon: /images/icons/amazon-icon.png
+    icon: /assets/icons/amazon-icon.png
     color: yellow
   BN:
     name: Barnes & Noble
-    icon: /images/icons/barnes-and-noble-icon.png
+    icon: /assets/icons/barnes-and-noble-icon.png
     color: green
   Apple:
     name: Apple Books
-    icon: /images/icons/apple-books-icon.png
+    icon: /assets/icons/apple-books-icon.png
     color: red
   CFP:
     name: Christian Faith Publishing
-    icon: /images/icons/CFP-logo.png
+    icon: /assets/icons/CFP-logo.png
     color: black
 sass:
   sass_dir: _sass

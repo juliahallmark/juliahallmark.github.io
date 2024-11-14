@@ -2,7 +2,7 @@
 layout: book
 title: The Chase
 type: children
-cover: /images/the-chase-cover.jpg
+cover: /images/book-covers/the-chase-cover.jpg
 links:
   - vendor: Amazon.com
     url: 'https://www.amazon.com/gp/product/B0B399YR99/'

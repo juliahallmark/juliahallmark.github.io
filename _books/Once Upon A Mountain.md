@@ -4,7 +4,7 @@ type: science fiction/fantasy
 blurb: >-
   What happens when God chooses an unremarkable family to become missionaries to
   alien civilizations?
-cover: /images/Once Upon a Mountain book cover/Once Upon a Mountain Book Cover.jpg
+cover: /images/book-covers/Once Upon a Mountain Book Cover.jpg
 video_embed: >
   <iframe width="560" height="315"
   src="https://www.youtube.com/embed/q-RBfdntNdY?si=-vhOyeo92BkPCW7P"
